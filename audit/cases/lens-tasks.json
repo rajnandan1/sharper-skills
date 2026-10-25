@@ -1,4 +1,0 @@
-[
-  {"id": "review", "task": "Prepare the Q3 review deck for the Agent Search service for Thursday's leadership meeting. Cover p99 latency, cost per search, and the 3 incidents since July."},
-  {"id": "flaky", "task": "Fix the flaky test test_incident_comment_notifies_subscribers in the kener repo. It fails about 1 run in 5 on CI and always passes locally."}
-]
