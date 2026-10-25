@@ -1,4 +1,7 @@
-# sharper-skills
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="brand/sharper-skills-horizontal-white.svg">
+  <img alt="sharper-skills" src="brand/sharper-skills-horizontal.svg" width="480">
+</picture>
 
 Six skills for coding agents that make the agent more precise before it acts. Each skill is a folder with a `SKILL.md` file. Any agent that reads that format can use it: Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot, and others. None of them does the task. Each one shapes the prompt, the plan, the investigation, or the next session.
 
@@ -67,6 +70,10 @@ Copy the folders you want from `skills/` into the folder your agent reads:
 
 - Felix Rieseberg, "How to be more ambitious: A tutorial for humans with models": https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/
 - copyconstruct, "How to effectively debug when you no longer understand the code": https://copyconstruct.medium.com/how-to-effectively-debug-when-you-no-longer-understand-the-code-bd3dcb2c5f7b
+
+## Logo
+
+The logo files and a one-page usage guide live in `brand/`. The symbol is the `>` prompt sign drawn as two blades that taper to one point.
 
 ## License
 
