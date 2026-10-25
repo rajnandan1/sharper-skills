@@ -1,6 +1,6 @@
 # sharper-skills
 
-Six Claude Code skills that make the agent more precise before it acts. None of them does the task. Each one shapes the prompt, the plan, the investigation, or the next session.
+Six skills for coding agents that make the agent more precise before it acts. Each skill is a folder with a `SKILL.md` file, so it works in any agent that reads that format: Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot and others. None of them does the task. Each one shapes the prompt, the plan, the investigation, or the next session.
 
 ## The skills
 
@@ -16,13 +16,42 @@ Three evidence skills. They come from copyconstruct's post "How to effectively d
 - `debugging-by-constraints` runs on production bugs and review findings. It gathers facts first, picks a control, builds a hypotheses-by-fact matrix, and keeps the one hypothesis that fits every fact. Claude invokes it on its own, or you run `/debugging-by-constraints`.
 - `/debug-retro` runs after a debug session. It counts each time you had to step in and turns each one into a lasting rule. It is the least exercised of the six.
 
-Installed as a plugin, each skill also answers to its prefixed name, such as `/sharper-skills:higher`.
-
 ## Install
 
-1. In Claude Code, run `/plugin marketplace add rajnandan1/sharper-skills`.
+Pick one of the three ways.
+
+### Any agent, one skill at a time
+
+The `skills` CLI from Vercel Labs (https://github.com/vercel-labs/skills) installs skills from a GitHub repo into the folder your agent reads. It needs Node.js 22.20 or later. Run it from your project:
+
+```
+npx skills add rajnandan1/sharper-skills
+```
+
+The CLI lists the six skills and the agents it finds on your machine, and you pick. Skills land in the current project. Add `-g` to install them for every project.
+
+To skip the prompts, name the skills and the agents:
+
+```
+npx skills add rajnandan1/sharper-skills --list
+npx skills add rajnandan1/sharper-skills --skill deeper -a claude-code
+npx skills add rajnandan1/sharper-skills --skill debugging-by-constraints --skill debug-retro -a codex -a cursor -g
+```
+
+Later, `npx skills update` pulls new versions and `npx skills remove deeper` removes one.
+
+In agents other than Claude Code, the three lenses take the task from your last message, because only Claude Code fills in the `<task>` argument.
+
+### Claude Code, all six as a plugin
+
+1. Run `/plugin marketplace add rajnandan1/sharper-skills`.
 2. Run `/plugin install sharper-skills@sharper-skills`.
-To install without the plugin system, copy the folders under `skills/` into `~/.claude/skills/`.
+
+Installed as a plugin, each skill also answers to its prefixed name, such as `/sharper-skills:higher`.
+
+### By hand
+
+Copy the folders you want from `skills/` into the folder your agent reads: `~/.claude/skills/` for Claude Code, `~/.agents/skills/` for Codex, `~/.cursor/skills/` for Cursor.
 
 ## Where learned rules go
 
