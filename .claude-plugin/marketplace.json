@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "sharper-skills",
+  "description": "Six skills that make Claude more precise before it acts: three prompt lenses (higher, deeper, wider) and an evidence loop for building and debugging (signal-first-plan, debugging-by-constraints, debug-retro).",
+  "owner": {
+    "name": "Raj Nandan Sharma",
+    "url": "https://github.com/rajnandan1"
+  },
+  "plugins": [
+    {
+      "name": "sharper-skills",
+      "description": "Prompt lenses that rewrite a task for altitude, depth or range, plus signal-first planning and evidence-first debugging.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

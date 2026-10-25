@@ -1,0 +1,70 @@
+{
+  "description": "Is a rewritten prompt one level above the original: asks for the outcome the task serves, covers the original, asks for proof. Run by the higher skill.",
+  "state": {
+    "description": "`original`: the task as the user first wrote it. `rewrite`: the rewritten prompt.",
+    "keys": [
+      "original",
+      "rewrite"
+    ]
+  },
+  "questions": {
+    "relation": {
+      "type": "choice",
+      "instructions": "How does `rewrite` relate to `original`?",
+      "criteria": {
+        "higher": "Asks for the outcome that `original` serves, one level up: the decision instead of the artifact, or a condition that stays true instead of a one-off fix. The original artifact may still be made, but as a means to that outcome, which the rewrite names as the goal. Doing it covers the work `original` asked for or makes it unnecessary.",
+        "same_level": "Asks for the same artifact as `original` as the goal, done with more data, more detail, or a better method, and names no outcome beyond the artifact.",
+        "sideways": "Asks for a different task that neither contains `original` nor serves its purpose.",
+        "pile": "Asks for `original` plus more tasks with no single outcome tying them together.",
+        "other": "None of the above."
+      }
+    },
+    "names_outcome": {
+      "type": "noul",
+      "instructions": "Does `rewrite` state what the work is for: the outcome or the condition that should hold, in plain words?",
+      "criteria": {
+        "true": "It names the purpose or the outcome.",
+        "false": "It only describes work to do."
+      }
+    },
+    "evidence": {
+      "type": "noul",
+      "instructions": "Does `rewrite` ask for proof that the outcome is reached or would have been reached: a backtest on past data, a measurement, or a trial run beside the current way?",
+      "criteria": {
+        "true": "A concrete proof on data, history, or a measurement is asked for.",
+        "false": "No proof is asked for, or the only check is the model or the user judging."
+      }
+    },
+    "covers_original": {
+      "type": "noul",
+      "instructions": "Would doing what `rewrite` asks also cover, or make unnecessary, the work that `original` asked for?",
+      "criteria": {
+        "true": "The original work is included in or replaced by the rewrite.",
+        "false": "The original work would still need doing separately, or is dropped with nothing in its place."
+      }
+    }
+  },
+  "gate": {
+    "rules": [
+      {
+        "verdict": "escalate",
+        "any": [
+          "relation.choice == sideways",
+          "relation.choice == pile",
+          "relation.choice == other"
+        ]
+      },
+      {
+        "verdict": "confirm",
+        "any": [
+          "relation.choice == same_level",
+          "relation.confidence < 0.5",
+          "names_outcome.noul < 0.5",
+          "evidence.noul < 0.5",
+          "covers_original.noul < 0.5"
+        ]
+      }
+    ],
+    "default": "act"
+  }
+}
