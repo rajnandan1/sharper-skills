@@ -7,8 +7,6 @@ disable-model-invocation: true
 
 # /higher
 
-Method source: Felix Rieseberg, "How to be more ambitious: A tutorial for humans with models", https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/
-
 Raise this task one level, from the task to the outcome it serves:
 
 $ARGUMENTS

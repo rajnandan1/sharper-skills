@@ -5,8 +5,6 @@ description: Signal-first planning before you build a feature. Lists every exit 
 
 # Signal-first plan
 
-Method source: copyconstruct, "How to effectively debug when you no longer understand the code" (2026-10-10), https://copyconstruct.medium.com/how-to-effectively-debug-when-you-no-longer-understand-the-code-bd3dcb2c5f7b. Its latency bug reached production because no check compared the client's DNS lookup count with the last good run.
-
 Before you build, decide how you will see that the feature works and how you will see that it broke. A feature breaks at its _exits_: the places where its data or behaviour leaves the process. Name every exit, put one _signal_ on each, and make every signal checkable before you write the feature.
 
 A small change can have one exit. Then the plan is one row.

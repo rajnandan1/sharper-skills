@@ -5,8 +5,6 @@ description: Evidence-first debugging for production bugs and PR review findings
 
 # Debugging by constraints
 
-Method source: copyconstruct, "How to effectively debug when you no longer understand the code" (2026-10-10), https://copyconstruct.medium.com/how-to-effectively-debug-when-you-no-longer-understand-the-code-bd3dcb2c5f7b
-
 Code is an _unreliable narrator_: it says what can happen, not what did happen. Start from what did happen.
 
 The work sits on two tiers:
@@ -60,11 +58,11 @@ H3 server CPU throttled     ✓              ✗                       ✓
 - **Read the columns.** A signal that fits almost every row is _weak_. Aggregates such as p99, error rate and SLOs usually are. A signal that fits one row is _strong_. Steer to the row the strongest signal points at, and test that row first.
 - **Read the rows.** One ✗ kills a row. A ? is a fact to gather, not a pass. A fact from a smaller scale, a different configuration or a different load contradicts a row only if the row's effect does not depend on that condition. Scale is the condition a cause shows under, not a second cause: mark such a cell ? and name the fact at the variable's scale that would settle it.
 - **No row is all ✓?** Apply these in order, and rebuild the matrix after each one:
-  1. Re-check how the suspect fact was gathered: host, time window, version, tool.
-  2. Split a coarse hypothesis ("the deploy did it") into its parts.
-  3. Merge fine hypotheses that each explain one host or one instance into the shared cause.
-  4. Combine two hypotheses that each explain different facts and contradict none.
-  5. Only then propose a new hypothesis, built from the facts.
+    1. Re-check how the suspect fact was gathered: host, time window, version, tool.
+    2. Split a coarse hypothesis ("the deploy did it") into its parts.
+    3. Merge fine hypotheses that each explain one host or one instance into the shared cause.
+    4. Combine two hypotheses that each explain different facts and contradict none.
+    5. Only then propose a new hypothesis, built from the facts.
 - **Every signal weak, or tactic 5 finds nothing?** Go one layer down in [LAYERS.md](LAYERS.md): down the stack for an infrastructure bug, down the request path for a logic bug. Run Step 0 for that layer. Stop at the first layer that gives a strong signal. Gather more facts, not more hypotheses.
 
 Done when exactly one row is ✓ in every cell, with no ?, a strong signal points at it, and a fresh subagent given [REVIEWER.md](REVIEWER.md) items 4 and 5 and the matrix has agreed on which signals are weak and found no tactic you skipped before a new hypothesis or a layer descent.
