@@ -1,6 +1,6 @@
 {
   "name": "sharper-skills",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Six skills that make Claude more precise before it acts: three prompt lenses (higher, deeper, wider) and an evidence loop for building and debugging (signal-first-plan, debugging-by-constraints, debug-retro).",
   "author": {
     "name": "Raj Nandan Sharma",

@@ -1,0 +1,277 @@
+[
+ {
+  "id": "R1",
+  "claim": "A task is the user's best guess at how to get an outcome; the lens asks what should happen next, the goal beyond the goal.",
+  "quote": "When you give the model a task, it's executing your best guess at how to get the outcome you want.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "A task is the user's best guess at how to get an outcome"
+   },
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Beyond**"
+   }
+  ]
+ },
+ {
+  "id": "R2",
+  "claim": "Climb in rungs: each rewrite asks for the next outcome up, from the data to the decisions to the process, and the user climbs again from the result.",
+  "quote": "Work out which three decisions are most urgent in the face of everything you've learned",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "Each call climbs one rung"
+   }
+  ]
+ },
+ {
+  "id": "R3",
+  "claim": "The top rung names the purpose, asks for a better way, shows from the organisation's own history that it would have caught things sooner, and runs it beside the current way for a cycle.",
+  "quote": "show from our own history that it would have caught things sooner, and run it beside the current one for a quarter",
+  "status": "partial",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "Where history exists, the prompt asks to show the new way would have worked on it"
+   },
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "beside the current way",
+    "added": "v0.4.0"
+   }
+  ],
+  "reason": "the history check was there; the side-by-side run for one cycle was not"
+ },
+ {
+  "id": "R4",
+  "claim": "Altitude fits tasks with an ultimate outcome and fits creative work less; a meeting about the work is the sign to use it.",
+  "quote": "A good tell-tale sign that ambition in altitude is a good idea is if you're going to have meetings to discuss whatever you're working on.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "If the task has no outcome beyond itself"
+   },
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "`/higher` if a meeting will discuss this"
+   }
+  ]
+ },
+ {
+  "id": "R5",
+  "claim": "Altitude is where durable workflows take the human out of the loop, and that needs the workflow changed: the model must be able to fetch the data, map versions to commits, and reach machines to reproduce and verify.",
+  "quote": "in order to let Claude make sure our app is crash-free, I first had to make sure it can easily fetch crash reports, understand which app version maps to what git commit, and give it access to Windows, macOS, and Linux computers",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Standing condition**"
+   },
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Access**"
+   }
+  ]
+ },
+ {
+  "id": "R6",
+  "claim": "There are limits; the model handles higher abstraction as it grows, so climb one rung per call rather than asking for the top at once.",
+  "quote": "\"Claude, go make money\" doesn't seem to work for most businesses by itself in 2026",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "Each call climbs one rung"
+   }
+  ]
+ },
+ {
+  "id": "R7",
+  "claim": "Depth means the tools, techniques, media and knowledge of the best professionals in the field, pushed until even they would learn something new.",
+  "quote": "pushing the model to use the tools, techniques, media, and knowledge employed by the best professionals in the field",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Professional**"
+   },
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Instruments**"
+   }
+  ]
+ },
+ {
+  "id": "R8",
+  "claim": "Insist on the same instruments as the best in the field, because models switch vocabulary without switching methods; databases and statistical models over markdown tables.",
+  "quote": "models often switch vocabulary without actually switching methods",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Instruments**"
+   }
+  ],
+  "reason": "covered in behaviour: both deeper rewrites in the v0.4.0 run named runnable instruments (quantileExact, bootstrap interval, gh run view, stress-ng)"
+ },
+ {
+  "id": "R9",
+  "claim": "Set an unreasonable target and state that it is reasonable; when a step looks impossible, say it is solvable and to keep going.",
+  "quote": "Pick unreasonable goals and tell the model that they're very reasonable",
+  "status": "rejected",
+  "refs": [],
+  "reason": "both deeper rewrites in the v0.4.0 behavioural run already set numeric targets (0 failures in 200 runs; within 5 percent of the dashboard) with no line asking for them, and no session showed a timid target; revisit if one does"
+ },
+ {
+  "id": "R10",
+  "claim": "Challenge what you know: give the model the raw data and ask it to check the stated belief adversarially.",
+  "quote": "Give the model access to the raw information and data and ask it to adversarially check assumptions.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Raw material**"
+   }
+  ]
+ },
+ {
+  "id": "R11",
+  "claim": "Produce new knowledge: once inside the data, ask for the blind spot nobody asked about, and show it holds on data it has not seen.",
+  "quote": "find the earliest signal of churn we don't know about yet, and show it predicts on data it has not seen",
+  "status": "partial",
+  "refs": [
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Outside judge**"
+   },
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "nobody asked about",
+    "added": "v0.4.0"
+   }
+  ],
+  "reason": "held-out data was there; the finding nobody asked about was not, and the flaky-test rewrite had no such ask"
+ },
+ {
+  "id": "R12",
+  "claim": "Use an outside judge, never the model itself; best is a tool the model can run for immediate feedback.",
+  "quote": "Do not ask the model to judge itself.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Outside judge**"
+   }
+  ]
+ },
+ {
+  "id": "R13",
+  "claim": "The depth prompt asks four things before the rewrite: what a top professional would do that is not asked, the rawest material, the specific methods and tools, and what other than the model or the user shows the result is right.",
+  "quote": "I want a deeper version of this task, not a bigger one.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "Make this task deeper, not bigger"
+   },
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Professional**"
+   },
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Raw material**"
+   },
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Instruments**"
+   },
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Outside judge**"
+   }
+  ]
+ },
+ {
+  "id": "R14",
+  "claim": "Range means more fields than were economical before, made practical by multi-agent systems.",
+  "quote": "being ambitious in range means that we consider our work from the perspective of different fields - more fields than would have been economical in the past",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "wider/SKILL.md",
+    "anchor": "Wider means the task gets the methods of fields it would not normally afford"
+   },
+   {
+    "file": "wider/SKILL.md",
+    "anchor": "so each can run as its own subagent"
+   }
+  ]
+ },
+ {
+  "id": "R15",
+  "claim": "Replace the nouns with verbs: the review is not a deck, it is getting busy people to believe a story about cause and effect and to decide under uncertainty in 30 minutes.",
+  "quote": "A quarterly review isn't \"a deck\".",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "wider/SKILL.md",
+    "anchor": "**Verbs**"
+   }
+  ]
+ },
+ {
+  "id": "R16",
+  "claim": "Assemble a crew of fields chosen for the stakes and for the medium the result is delivered in, such as a motion and audio designer when it is presented, and include a red team that attacks the result.",
+  "quote": "For production quality, I'd bring in an analyst, a journalist, and an editor.",
+  "status": "partial",
+  "refs": [
+   {
+    "file": "wider/SKILL.md",
+    "anchor": "**Crew**"
+   },
+   {
+    "file": "wider/SKILL.md",
+    "anchor": "**Red team**"
+   }
+  ],
+  "reason": "the crew ignored the medium: the review-deck rewrite for a Thursday meeting had no field that works in the room"
+ },
+ {
+  "id": "R17",
+  "claim": "Avoid role play: use the fields to find methods, and ask for what a short seller does, not for writing like one.",
+  "quote": "Don't ask the model to write like a short seller, ask it to do what a short seller does to research their position.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "wider/SKILL.md",
+    "anchor": "Methods, not characters"
+   }
+  ]
+ },
+ {
+  "id": "R18",
+  "claim": "Every kind of ambition needs the model to have a computer where it can install software and reach the relevant data.",
+  "quote": "All the ways in which I describe ambition require the model to have a computer with the ability to install software and access to all kinds of relevant data",
+  "status": "infra",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Access**"
+   }
+  ],
+  "reason": "the lenses can name the access; providing it is the user's setup"
+ },
+ {
+  "id": "R19",
+  "claim": "Specific hard goals outperform telling people to try their best.",
+  "quote": "humans who are given specific hard goals perform better than those who are simply told to try their best",
+  "status": "rejected",
+  "refs": [],
+  "reason": "both deeper rewrites in the v0.4.0 behavioural run already set numeric targets (0 failures in 200 runs; within 5 percent of the dashboard) with no line asking for them, and no session showed a timid target; revisit if one does"
+ }
+]

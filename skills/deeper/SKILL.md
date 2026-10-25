@@ -21,7 +21,7 @@ Deeper means the inputs, methods, and checks a top professional in the field wou
 
 One to three sentences each, specific to this task, under these four headings in this order:
 
-- **Professional**: what a top professional in this field would do here that the task does not ask for.
+- **Professional**: what a top professional in this field would do here that the task does not ask for, including the finding nobody asked about that the raw material would show.
 - **Raw material**: the rawest material they would start from instead of the digested version the task offers. The logs, not the dashboard. The rows, not the chart. The source, not the summary. If the task states a belief, the raw material is what tests it.
 - **Instruments**: the specific methods and tools they would use, named well enough to run: the query, the statistic, the library, the command, the procedure.
 - **Outside judge**: what, other than the model or the user, would show the result is right: a test that runs, a measurement, held-out data, a second tool. Best: a check the model can run and get an answer from at once.

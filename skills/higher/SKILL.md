@@ -32,7 +32,7 @@ Done when each heading names something concrete that applies to this task and no
 
 ## 2. Rewrite the prompt
 
-Write the prompt the user should have sent: it names the purpose in its first sentence and asks for the outcome one level up. Doing it covers the original task or makes it unnecessary. Keep the user's facts, names, and numbers verbatim. Where history exists, the prompt asks to show the new way would have worked on it. Put it in one fenced code block.
+Write the prompt the user should have sent: it names the purpose in its first sentence and asks for the outcome one level up. Doing it covers the original task or makes it unnecessary. Keep the user's facts, names, and numbers verbatim. Where history exists, the prompt asks to show the new way would have worked on it. Where the outcome replaces a standing process, such as a review or a report, the prompt asks to run the new way beside the current way for one cycle before the switch. Put it in one fenced code block.
 
 ## 3. Hand it back
 

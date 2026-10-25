@@ -22,7 +22,7 @@ Wider means the task gets the methods of fields it would not normally afford: th
 Under these three headings in this order:
 
 - **Verbs**: the task restated as what it does to whom, with no noun for the artifact. A quarterly review is not a deck. It is "getting busy people to believe a story about cause and effect, and to decide under uncertainty, in 30 minutes". One or two sentences.
-- **Crew**: three to five fields whose practitioners do those verbs at the top level, and for each the one method from that field that applies here. One line per field. At least one field is one the task would not normally afford.
+- **Crew**: three to five fields whose practitioners do those verbs at the top level, and for each the one method from that field that applies here. One line per field. At least one field is one the task would not normally afford. Pick for the medium too: a result that is presented gets a field that works in the room.
 - **Red team**: one field whose job is to find the hole in this kind of result, and what its practitioner would do to this result. One or two sentences.
 
 Done when each field carries a method specific enough to run on this task, not a title.

@@ -1,0 +1,99 @@
+[
+  {
+    "id": "copyconstruct",
+    "skills": [
+      "debugging-by-constraints",
+      "debug-retro",
+      "signal-first-plan"
+    ],
+    "title": "How to effectively debug when you no longer understand the code",
+    "author": "Cindy Sridharan",
+    "url": "https://copyconstruct.medium.com/how-to-effectively-debug-when-you-no-longer-understand-the-code-bd3dcb2c5f7b",
+    "archive": "20261017150838",
+    "note": "Medium blocks direct fetches; the archive.org capture of 2026-10-17 is used."
+  },
+  {
+    "id": "rieseberg",
+    "skills": [
+      "higher",
+      "deeper",
+      "wider"
+    ],
+    "title": "How to be more ambitious: A tutorial for humans with models",
+    "author": "Felix Rieseberg",
+    "url": "https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/"
+  },
+  {
+    "id": "sre-troubleshooting",
+    "skills": [
+      "debugging-by-constraints"
+    ],
+    "title": "Effective Troubleshooting (Site Reliability Engineering, chapter 12)",
+    "author": "Chris Jones, Google",
+    "url": "https://sre.google/sre-book/effective-troubleshooting/"
+  },
+  {
+    "id": "sre-canarying",
+    "skills": [
+      "signal-first-plan"
+    ],
+    "title": "Canarying Releases (The Site Reliability Workbook, chapter 16)",
+    "author": "Google",
+    "url": "https://sre.google/workbook/canarying-releases/"
+  },
+  {
+    "id": "agans",
+    "skills": [
+      "debugging-by-constraints"
+    ],
+    "title": "Debugging: The 9 Indispensable Rules, the rules as published by the author",
+    "author": "David J. Agans",
+    "url": "https://debuggingrules.com/",
+    "note": "Not fetchable in raw form on 2026-10-25: the live site renders by script and carries no rules text; the archive.org captures of its pages hold reader stories, not the nine rules. The book is not free online. Skipped with this reason.",
+    "skip": true
+  },
+  {
+    "id": "zeller-intro",
+    "skills": [
+      "debugging-by-constraints"
+    ],
+    "title": "Introduction to Debugging (The Debugging Book)",
+    "author": "Andreas Zeller",
+    "url": "https://www.debuggingbook.org/html/Intro_Debugging.html",
+    "note": "Why Programs Fail is not free online; Zeller's free Debugging Book carries the same scientific method."
+  },
+  {
+    "id": "hamming",
+    "skills": [
+      "higher",
+      "deeper",
+      "wider"
+    ],
+    "title": "You and Your Research",
+    "author": "Richard Hamming",
+    "url": "https://www.cs.princeton.edu/~jrex/teaching/spring2005/fft/hamming.html",
+    "note": "J. F. Kaiser's transcription of the 1986 Bellcore talk, Princeton copy."
+  },
+  {
+    "id": "majors-odd",
+    "skills": [
+      "signal-first-plan"
+    ],
+    "title": "A Next Step Beyond Test Driven Development",
+    "author": "Charity Majors",
+    "url": "https://www.honeycomb.io/blog/a-next-step-beyond-test-driven-development",
+    "note": "First published on The New Stack, 2020-06-09; the Honeycomb copy is the author's own."
+  },
+  {
+    "id": "polya",
+    "skills": [
+      "higher",
+      "deeper",
+      "wider"
+    ],
+    "title": "How to Solve It (1973 printing)",
+    "author": "George Polya",
+    "url": "https://archive.org/download/polya-how-to-solve-it/",
+    "note": "Scanned text from the archive.org item polya-how-to-solve-it; the _djvu.txt file. Read for the audit, not stored in the repo."
+  }
+]

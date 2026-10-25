@@ -1,0 +1,843 @@
+[
+ {
+  "id": "C1",
+  "claim": "A control is a case identical to the broken case except for the one suspected difference, such as the same code with the feature flag disabled.",
+  "quote": "identical to the variable except for the one thing you suspect is causing the bug",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "The **variable** is the broken case"
+   }
+  ]
+ },
+ {
+  "id": "C2",
+  "claim": "Every hypothesis the agent pursues must start from a high-fidelity signal, not from a guess.",
+  "quote": "Every hypothesis an agents thinks is worth pursuing should start from a high-fidelity signal.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the columns.**"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Every signal weak, or tactic 5 finds nothing?**"
+   }
+  ]
+ },
+ {
+  "id": "C3",
+  "claim": "The agent should write throwaway tooling, such as scripts, benchmarks or performance tests, on demand to gather or count facts, because that is an agentic strength.",
+  "quote": "Very adept at writing throwaway tooling (shell scripts, benchmark tests, performance tests etc) on demand",
+  "status": "gap",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "write a throwaway script",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "no line told the agent to write a script when no tool reaches a fact"
+ },
+ {
+  "id": "C4",
+  "claim": "The agent must not build narratives on thin or non-existent evidence.",
+  "quote": "They often build baseless narratives out of thin or non-existent evidence.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Cite.**"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Hypotheses** are everything you infer"
+   }
+  ]
+ },
+ {
+  "id": "C5",
+  "claim": "The agent must not fixate on an obscure edge case and attribute the reported bug to it.",
+  "quote": "They can fixate on abstruse edge cases",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Repro parity.**"
+   }
+  ]
+ },
+ {
+  "id": "C6",
+  "claim": "The agent must not walk past its own previous best findings; findings must stay in view across the investigation.",
+  "quote": "walk past their own previous best findings",
+  "status": "gap",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Keep the numbered fact list and the matrix in one working file",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "no line kept the facts and matrix in one file that is re-read"
+ },
+ {
+  "id": "C7",
+  "claim": "Reading the code first to form hypotheses is an anti-pattern; the agent collects all available evidence first and reads code last, only to explain the facts.",
+  "quote": "reading the code first to formulate hypotheses about a bug should always be the very last resort of the agentic investigation process, not the starting point",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Code is an _unreliable narrator_"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Read code to explain the bug only after this"
+   }
+  ]
+ },
+ {
+  "id": "C8",
+  "claim": "When the agent reads code, it chooses which snapshot of the code to read, and a wrong choice misleads it; the code read must be the version that ran when the bug occurred.",
+  "quote": "the agent decides what snapshot of the code to read. An agent choosing poorly can lead to it making incorrect deductions.",
+  "status": "gap",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Read it at the version that ran when the bug occurred",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "no line named the version to read code at"
+ },
+ {
+  "id": "C9",
+  "claim": "Debugging is a constraint satisfaction problem: the agent must find the one hypothesis consistent with every fact, not any plausible one.",
+  "quote": "it now needs to find the hypothesis that is fully consistent with every constraint on the table",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Each fact is a _constraint_"
+   }
+  ]
+ },
+ {
+  "id": "C10",
+  "claim": "Gather facts from every available source: logs, crash reports, stack traces, profiles, telemetry, traces, kernel and DNS data, configs, flag values, versions, deploy history, version control history.",
+  "quote": "collect data from every possible source available to us, such as error logs, crash reports, stack traces, profiler data, telemetry data",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Facts** are data a tool or a person gathered"
+   },
+   {
+    "file": "debugging-by-constraints/LAYERS.md",
+    "anchor": "| Fact | Where |"
+   }
+  ]
+ },
+ {
+  "id": "C11",
+  "claim": "Facts are immutable; the agent never alters or disputes them, and when a fact looks suspect it has it gathered again by whoever produced it.",
+  "quote": "The facts are immutable, and not something an agent can alter or dispute.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Facts** are data a tool or a person gathered"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Re-check how the suspect fact was gathered"
+   }
+  ]
+ },
+ {
+  "id": "C12",
+  "claim": "Hypotheses are where the agent is most convincing and most often wrong, so they get the most scrutiny and must stay tethered to facts.",
+  "quote": "A hypothesis is only as strong as the facts underpinning it",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Hypotheses** are everything you infer"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Cite.**"
+   }
+  ]
+ },
+ {
+  "id": "C13",
+  "claim": "A multi-cause hypothesis must satisfy every fact as a whole, and each cause must be strictly necessary: removing it leaves some fact unexplained.",
+  "quote": "each cause must be strictly necessary, and removing it from the combination should leave some fact unexplained",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Each fact is a _constraint_"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Necessity.**"
+   }
+  ]
+ },
+ {
+  "id": "C14",
+  "claim": "Never explain away inconvenient facts with a more complicated hypothesis.",
+  "quote": "the goal should never be to explain away inconvenient facts by coming up with more complicated hypotheses",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Each fact is a _constraint_"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Only then propose a new hypothesis"
+   }
+  ]
+ },
+ {
+  "id": "C15",
+  "claim": "Do not validate every possible hypothesis; steer to the one most likely to satisfy every fact and test it first.",
+  "quote": "The goal isn’t to validate every possible hypothesis",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the columns.**"
+   }
+  ]
+ },
+ {
+  "id": "C16",
+  "claim": "A data point present in the variable and absent in the control is a signal; one present in both is noise; noise still eliminates hypotheses built on it but never points anywhere.",
+  "quote": "If the same data point shows up in both the control and the variable (the TCP handshake time), it’s just noise",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "A data point in the variable and not in the control is a **signal**"
+   }
+  ]
+ },
+ {
+  "id": "C17",
+  "claim": "Without a control the agent cannot tell signals from noise, so it must obtain a control before steering.",
+  "quote": "Without a control, an agent can’t tell which of the many promising data points in the sea of facts are signals.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "The **variable** is the broken case"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Done when every fact is tagged signal or noise"
+   }
+  ]
+ },
+ {
+  "id": "C18",
+  "claim": "For tricky bugs use a sad-path control that also fails but in a different, louder way; it is often the cheapest because it already exists in the data.",
+  "quote": "A better control in such cases is often a “sad path” that is also failing, but in a different, louder way than the variable.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "pick a _sad path_ control"
+   }
+  ]
+ },
+ {
+  "id": "C19",
+  "claim": "A control is only as good as the confidence that it is not broken in the same way as the variable.",
+  "quote": "a control is only as good as your confidence that it isn’t broken in the same way as the variable",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Check that the control is not broken the same way"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "gather the control's own value",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "sharpened in v0.3.0 with the how"
+ },
+ {
+  "id": "C20",
+  "claim": "A signal is strong when few hypotheses satisfy it, ideally one; SLOs, SLIs and p99 are usually weak signals.",
+  "quote": "A signal is considered strong when very few hypotheses satisfy it. Ideally, the number we’re looking for is 1.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the columns.**"
+   }
+  ]
+ },
+ {
+  "id": "C21",
+  "claim": "Build a hypotheses-by-fact matrix and read it column by column, counting how many hypotheses each signal fits, to find the signal worth pursuing.",
+  "quote": "generating a matrix which maps every plausible hypothesis to every high-fidelity signal, and count how many hypotheses each signal is consistent with",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "List the plausible hypotheses"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the columns.**"
+   }
+  ]
+ },
+ {
+  "id": "C22",
+  "claim": "Read the matrix row by row; a hypothesis is valid only if no fact contradicts it; no all-✓ row means the hypothesis set is wrong.",
+  "quote": "None of the hypotheses satisfied all three facts (no row in this matrix is all ✓), which was a sign that something was wrong with the current crop of hypotheses.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the rows.**"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**No row is all ✓?**"
+   }
+  ]
+ },
+ {
+  "id": "C23",
+  "claim": "When every hypothesis falls short, apply five tactics in order before a new hypothesis: reverify how facts were gathered, split coarse hypotheses, merge fine ones, combine complementary ones, then a new hypothesis built only from facts.",
+  "quote": "Before reaching for a brand new hypothesis, an agent should try some cheaper tactics on for size first.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**No row is all ✓?**"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Re-check how the suspect fact was gathered"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Split a coarse hypothesis"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Merge fine hypotheses"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Combine two hypotheses"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Only then propose a new hypothesis"
+   }
+  ]
+ },
+ {
+  "id": "C24",
+  "claim": "Progressive signal discovery: start with the cheapest data, go one layer down only when every signal is weak or every hypothesis still falls short, and stop at the first strong signal.",
+  "quote": "We should stop descending as soon as a strong signal emerges. The goal is to find the strongest signal, not the deepest one.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "## Step 0: Gather facts, cheapest first"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Every signal weak, or tactic 5 finds nothing?**"
+   },
+   {
+    "file": "debugging-by-constraints/LAYERS.md",
+    "anchor": "Start at layer 1 and go down one layer only when every signal so far is weak"
+   }
+  ]
+ },
+ {
+  "id": "C25",
+  "claim": "Validate the candidate hypothesis against every fact, noise included; one contradicting fact discards it.",
+  "quote": "we need to validate it against every constraint in the factual tier, including the noise",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Check the winning row against every fact, noise included"
+   }
+  ]
+ },
+ {
+  "id": "C26",
+  "claim": "When too few facts exist several hypotheses survive and cannot be told apart; the answer is to gather more facts, not to pick one.",
+  "quote": "When too few facts are available, several hypotheses survive, and the agent has no way to tell them apart.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the rows.**"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Done when exactly one row is ✓ in every cell"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Every signal weak, or tactic 5 finds nothing?**"
+   }
+  ]
+ },
+ {
+  "id": "C27",
+  "claim": "Gather the same type of data from several instances of the same bug, such as packet captures from different users or profiles from different hosts; a pattern that repeats across instances and is absent in the control is a real signal.",
+  "quote": "same type of data from different instances of the same bug",
+  "status": "gap",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Gather the same fact from several instances",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "no line asked for the same fact from several instances of the bug"
+ },
+ {
+  "id": "C28",
+  "claim": "Turn signal isolation into arithmetic: compare counts such as bytes, files opened, DNS lookups, RPCs, time to first byte between control and variable.",
+  "quote": "letting the arithmetic subsequently guide the agent’s reasoning",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Compare them as numbers wherever you can"
+   }
+  ]
+ },
+ {
+  "id": "C29",
+  "claim": "Keep the factual tier fat and the derivative tier thin; a fat set of surviving hypotheses means too few or too weak constraints.",
+  "quote": "A fat derivative tier indicates that an agent is toying with too many hypotheses",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Each fact is a _constraint_"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Every signal weak, or tactic 5 finds nothing?**"
+   }
+  ]
+ },
+ {
+  "id": "C30",
+  "claim": "A repro is a hypothesis; it counts only if it shows the same strongest signal as the real bug; otherwise it is a different bug and plays no further part.",
+  "quote": "A repro proves that a bug exists, but not that it is the bug under investigation.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Repro parity.**"
+   }
+  ]
+ },
+ {
+  "id": "C31",
+  "claim": "When the report contains repro steps, run them first instead of reading code.",
+  "quote": "I was as surprised as anyone else when Claude did not first try to reproduce the bug, but instead offered a wrong analysis based on reading the code.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "If the report has repro steps, run them now"
+   }
+  ]
+ },
+ {
+  "id": "C32",
+  "claim": "Use the bug report's own facts as constraints before generating hypotheses: first bad and last good version, config defaults, the profile's frame.",
+  "quote": "What pruned the derivative tier was imposing the constraints already in the bug report",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Read the bug report in full"
+   }
+  ]
+ },
+ {
+  "id": "C33",
+  "claim": "An adversarial reviewer cannot vouch for the completeness of the facts and, with the same context, is one opinion counted twice; use it to eliminate, never to confirm, and keep the main agent's narrative out of it.",
+  "quote": "two agents concurring can be seen as one opinion counted twice",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Review.**"
+   },
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "Your job is to eliminate, not to confirm"
+   }
+  ]
+ },
+ {
+  "id": "C34",
+  "claim": "At the signal step the reviewer checks whether signals also appear in the control, whether the control is broken the same way, and how each fact was gathered.",
+  "quote": "The adversarial reviewer should first check if the high-fidelity signals also show up in the control.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "**Noise posing as signal.**"
+   },
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "**Broken control.**"
+   },
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "**Suspect facts.**"
+   }
+  ]
+ },
+ {
+  "id": "C35",
+  "claim": "At the hypothesis step the reviewer estimates how many hypotheses satisfy each signal, checks that tactics 2 to 4 were tried before a new hypothesis, and that a layer descent happened only after that.",
+  "quote": "the adversarial reviewer should estimate how many hypotheses satisfy each signal, without pursuing any of them",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "**Weak steering.**"
+   },
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "**Skipped tactics.**"
+   }
+  ]
+ },
+ {
+  "id": "C36",
+  "claim": "At the validation step the reviewer finds one unsatisfied fact, requires citations for every claim and culls uncited ones, and tests each cause of a combined hypothesis for necessity.",
+  "quote": "Requiring citations is a practical way to achieve this.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "**Breaking fact.**"
+   },
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "**Uncited claims.**"
+   },
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "**Unneeded cause.**"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Cite.**"
+   }
+  ]
+ },
+ {
+  "id": "C37",
+  "claim": "Adversarial review runs at every step of the loop, not only at the end.",
+  "quote": "Adversarial reviews should be incorporated into every step of the debugging process described above.",
+  "status": "partial",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Review.**"
+   },
+   {
+    "file": "debugging-by-constraints/REVIEWER.md",
+    "anchor": "The review runs three times",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "the reviewer ran once, at Step 3"
+ },
+ {
+  "id": "C38",
+  "claim": "Count human interventions per bug; each one is a gap where the agent should have procured a control, a constraint or a check itself; the target is zero.",
+  "quote": "The number of human interventions per bug is the most honest measure of how “agent-native” a factory really is",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debug-retro/SKILL.md",
+    "anchor": "Each time the human stepped in during a debug session"
+   },
+   {
+    "file": "debug-retro/SKILL.md",
+    "anchor": "`Interventions this session: N (plus D decisions).`"
+   }
+  ]
+ },
+ {
+  "id": "C39",
+  "claim": "Give the agent raw data, because aggregation destroys the signal; reserve decision points for humans and turn each decision into future policy.",
+  "quote": "Aggregation — the thing that makes a dashboard useful to a human — is often the thing that destroys the value of the signal for an agent.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the columns.**"
+   },
+   {
+    "file": "debug-retro/SKILL.md",
+    "anchor": "**decision:** a policy line"
+   },
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "Aggregates such as p99 and error rate are weak"
+   }
+  ]
+ },
+ {
+  "id": "C40",
+  "claim": "Agent access to production is read-only by default, scoped to the investigation, time-limited, rate-limit aware, privacy-scrubbed and auditable.",
+  "quote": "read-only by default, scoped to the current investigation, time-limited, load and rate limit aware, privacy-scrubbed, and auditable",
+  "status": "infra",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Production is read-only for you"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Write `<REDACTED>`"
+   }
+  ],
+  "reason": "scoping, time limits and audit are the platform's job"
+ },
+ {
+  "id": "C41",
+  "claim": "Decisions that carry accountability, such as rollback, escalation or dropping a feature, and choices between fixes with different tradeoffs go to a human, presented unambiguously with the agent's reasoning.",
+  "quote": "The agent’s job in such cases is to present all available choices to the human in an unambiguous way, along with its reasoning.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "If one fix fits, state it"
+   }
+  ]
+ },
+ {
+  "id": "C42",
+  "claim": "Design the verification loop before code is written: decide which quantitative signals would show the feature works or broke, and make the strongest signals available at the shallowest layer by default.",
+  "quote": "had the application layer logged the number of DNS lookups it was doing, the strongest signal would’ve been available directly from Layer 1",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "Before you build, decide how you will see that the feature works"
+   },
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "When only production can show the signal"
+   },
+   {
+    "file": "debug-retro/SKILL.md",
+    "anchor": "**a signal that took a layer descent to find:**"
+   }
+  ]
+ },
+ {
+  "id": "C43",
+  "claim": "Collect data by default rather than on demand, for example always-on advanced data gathering from a subset of production hosts.",
+  "quote": "having “always on” advanced data gathering from a small subset of production hosts",
+  "status": "infra",
+  "refs": [
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "When only production can show the signal"
+   }
+  ],
+  "reason": "always-on collection is the platform's job"
+ },
+ {
+  "id": "C44",
+  "claim": "Never use the human as a proxy to run commands or paste output; the agent runs them itself, and a human is involved only at a decision, which then becomes policy.",
+  "quote": "A large number of developers have devolved into being mindless meat proxies",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Run every query and command yourself"
+   },
+   {
+    "file": "debug-retro/SKILL.md",
+    "anchor": "| proxy |"
+   },
+   {
+    "file": "debug-retro/SKILL.md",
+    "anchor": "**decision:** a policy line"
+   }
+  ]
+ },
+ {
+  "id": "C45",
+  "claim": "The agent must set up a control, reproduce, constrain hypotheses by the report's facts, and cite claims without being asked; these are mandatory steps, not things a skilled human prompts for.",
+  "quote": "It didn’t set up a control in the “latency bug” until I asked it to.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Read the bug report in full"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "If the report has repro steps, run them now"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "The **variable** is the broken case"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Cite.**"
+   }
+  ]
+ },
+ {
+  "id": "C46",
+  "claim": "Testing and deploy gating should check parity of every high-fidelity signal against the previous successful run, not only pass or fail, and signals from past debugging sessions should become gate checks.",
+  "quote": "checking for parity when it comes to every high-fidelity signal",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "Run the checks on main"
+   },
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "After you build, run every check on main and on the branch"
+   },
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "List each signal that changed"
+   },
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "for signals that past bugs needed"
+   },
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "becomes a check in Step 3",
+    "added": "v0.3.0"
+   },
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "previous successful run",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "partial before v0.3.0; the deploy comparison and the checks from past signals were added"
+ },
+ {
+  "id": "C47",
+  "claim": "A signal learned in a past incident, such as the DNS lookup count, would have caught the regression in pre-production even at small scale if compared with the previous successful run.",
+  "quote": "if the pre-production testing environment had checked that the client’s DNS lookups matched those on the previous successful run, the routing bug would’ve been caught before it reached production",
+  "status": "gap",
+  "refs": [
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "previous successful run",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "no step compared a production-only signal with the previous successful run after deploy"
+ },
+ {
+  "id": "C48",
+  "claim": "Prefer facts from the production environment where the bug is observed over an elaborate local harness; a full stack in a box cannot replicate the factual tier.",
+  "quote": "It’s much more effective to ensure your debugging agent has the all the facts it requires directly from the production environment where the bug is observed, rather than spin up elaborate local test harnesses.",
+  "status": "gap",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "A local stack is a repro",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "no line said a local stack is not a fact source"
+ },
+ {
+  "id": "C49",
+  "claim": "Restarting a process wipes volatile evidence such as stacks and IPC state; capture it before any restart.",
+  "quote": "which wiped clean any evidence I might’ve been able to gather from a daemon caught dead to rights",
+  "status": "partial",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Production is read-only for you"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "capture what it destroys",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "the guardrail asked before a restart but did not say what to capture first"
+ },
+ {
+  "id": "C50",
+  "claim": "When a design rule was violated, such as a single-use state machine reused from a cache, add a test that enforces the rule.",
+  "quote": "none that enforced that it could never be used in a process wide cache",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debug-retro/SKILL.md",
+    "anchor": "**constraint:** the fact that should be gathered by default"
+   }
+  ]
+ },
+ {
+  "id": "C51",
+  "claim": "When another team rebuffs a report for lack of logs, descend layers for harder evidence and re-file with it rather than stop.",
+  "quote": "I was then able to file a new, comprehensive bug report with the authentication team again with the newfound evidence.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Every signal weak, or tactic 5 finds nothing?**"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "If one fix fits, state it"
+   }
+  ]
+ },
+ {
+  "id": "C52",
+  "claim": "Scale or load can be the condition under which a single cause shows; a fact gathered at a smaller scale does not contradict a hypothesis whose effect grows with scale.",
+  "quote": "The bug only hurt at production scale, but scale was the condition under which the cause showed up, not a second cause.",
+  "status": "gap",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Scale is the condition",
+    "added": "v0.3.0"
+   }
+  ],
+  "reason": "found by the behavioural run: the agent killed the post's real cause on the pre-production fact"
+ }
+]
