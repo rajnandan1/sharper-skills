@@ -40,6 +40,7 @@ Done when every exit has a signal and an expected value for every case.
 
 - Prefer a test that reaches the exit the way a client does and asserts the signal. One test can loop over many exits and cases.
 - When only production can show the signal (latency, call counts at real scale), emit it where the stack already logs or measures. A later debug session then finds it at layer 1.
+- Emit each signal with the fields that let a later question be asked without a new deploy: the request or job id, the input class, the exit, the count. An aggregate alone answers only the question you planned.
 - Run the checks on main. A check for new behaviour fails there. A check for behaviour the feature must keep passes there. If a keep check fails on main, the bug already exists: report it to the user before you build on top of it.
 
 Done when every signal has a test or an emitted metric, and you know which checks pass on main.
@@ -50,6 +51,6 @@ Show the user the plan as a table, then build: exit, signal, expected value per 
 
 1. After you build, run every check on main and on the branch.
 2. List each signal that changed. Every change must be one the plan expected. Fix any other change before merge.
-3. For a signal that only production or pre-production can show, compare its value in the first environment after deploy with the same signal on that environment's previous successful run, not with an absolute threshold and not only with pass or fail. This applies to every signal in the plan, including the ones taken from `.claude/debug-layers.md`. The post's DNS lookup count differed from the previous successful run even at pre-production scale, so this check would have caught that bug before production.
+3. For a signal that only production or pre-production can show, compare the canary population against the control population at the same time, broken down by population, when the rollout gives you one. A before-and-after comparison of one population against its previous successful run is the fallback; time of day and load move it, so say so in the PR. Check the control against its own baseline too, because a bad canary can hurt the control it is compared with. Never an absolute threshold alone, and not only pass or fail. This applies to every signal in the plan, including the ones taken from `.claude/debug-layers.md`. The copyconstruct post's DNS lookup count differed from the previous successful run even at pre-production scale, so this check would have caught that bug before production.
 4. Before you commit, list every file in the diff. Generated files, such as test screenshots and attachments, stay out unless the plan named them.
 5. In the PR, give the exit table and the comparison.

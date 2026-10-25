@@ -90,9 +90,10 @@ Done when:
 1. If one fix fits, state it. If more than one fits (remove the cache, or make the state machine safe to re-enter), list each with its tradeoff and your reasoning, and ask the user to pick before you change code. Calls that carry accountability go to the user the same way: roll back, escalate to another team, drop a feature.
 2. Check the fix against the intended-behaviour facts. When it changes who sees what, or behaviour those facts describe, match them. Where they are silent or disagree, ask the user.
 3. Write a regression test at a seam that shows the real signal. If no seam can show it, say so.
-4. Update every doc, help text and test that describes the changed behaviour.
-5. Remove every debug probe you added.
-6. In the commit or PR, state the cause, the strongest signal, and the control.
+4. Search for the same mistake elsewhere: other callers of the fixed path, and other code written to the same pattern. Fix them in the same change, or list them in the PR.
+5. Update every doc, help text and test that describes the changed behaviour.
+6. Remove every debug probe you added.
+7. In the commit or PR, state the cause, the strongest signal, and the control.
 
 ## Report
 

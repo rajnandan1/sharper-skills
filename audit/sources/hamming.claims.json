@@ -1,0 +1,107 @@
+[
+ {
+  "id": "H1",
+  "claim": "An important problem is one with consequences and a reasonable attack; without an attack it is not important however large the consequence.",
+  "quote": "It's not the consequence that makes a problem important, it is that you have a reasonable attack.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Access**"
+   },
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "If the task has no outcome beyond itself"
+   }
+  ]
+ },
+ {
+  "id": "H2",
+  "claim": "Never solve an isolated problem except as characteristic of a class; be in the mass production of a variable product.",
+  "quote": "never again solve an isolated problem except as characteristic of a class",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Standing condition**"
+   }
+  ]
+ },
+ {
+  "id": "H3",
+  "claim": "A change of viewpoint turns a defect into an asset.",
+  "quote": "by a change of viewpoint, turns out to be one of the greatest assets you can have",
+  "status": "rejected",
+  "refs": [
+   {
+    "file": "wider/SKILL.md",
+    "anchor": "**Verbs**"
+   }
+  ],
+  "reason": "a disposition, not a rewrite step; the lenses already reframe through the Verbs and Beyond headings"
+ },
+ {
+  "id": "H4",
+  "claim": "Write down every piece of evidence that contradicts your belief, or it disappears from your mind.",
+  "quote": "write down every piece of evidence which appeared to contradict his beliefs",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Facts** are data a tool or a person gathered"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Keep the numbered fact list and the matrix in one working file"
+   }
+  ]
+ },
+ {
+  "id": "H5",
+  "claim": "Work with the door open: interruptions bring clues about what matters.",
+  "quote": "occasionally gets clues as to what the world is and what might be important",
+  "status": "rejected",
+  "refs": [],
+  "reason": "a working habit for a person, not an instruction for a rewrite"
+ },
+ {
+  "id": "H6",
+  "claim": "Sell the work: paint the general picture of why it matters first, then sketch what was done.",
+  "quote": "paint a general picture to say why it's important, and then slowly give a sketch of what was done",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "it names the purpose in its first sentence"
+   }
+  ]
+ },
+ {
+  "id": "H7",
+  "claim": "Knowledge and productivity compound; steady extra effort outproduces talent.",
+  "quote": "Knowledge and productivity are like compound interest.",
+  "status": "rejected",
+  "refs": [],
+  "reason": "a human trait, not an agent instruction"
+ },
+ {
+  "id": "H8",
+  "claim": "Believe the theory enough to go ahead and doubt it enough to notice the misfits.",
+  "quote": "They believe the theory enough to go ahead; they doubt it enough to notice the errors and faults",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "A hypothesis lives only while it fits every fact"
+   }
+  ]
+ },
+ {
+  "id": "H9",
+  "claim": "Spend a fixed share of time on what the important problems of the field are.",
+  "quote": "committed 10% of my time trying to understand the bigger problems in the field",
+  "status": "rejected",
+  "refs": [],
+  "reason": "a practice for the person; /higher is the moment the user chooses to do it"
+ }
+]

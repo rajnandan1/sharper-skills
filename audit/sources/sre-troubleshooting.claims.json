@@ -1,0 +1,223 @@
+[
+ {
+  "id": "T1",
+  "claim": "Troubleshooting is the hypothetico-deductive method: observe, hypothesize causes, test the hypotheses.",
+  "quote": "we iteratively hypothesize potential causes for the failure and try to test those hypotheses",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Each fact is a _constraint_"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "## Step 2: Build the matrix"
+   }
+  ]
+ },
+ {
+  "id": "T2",
+  "claim": "Hypotheses are tested by comparing observed state against them, or by changing the system in a controlled way and watching the result.",
+  "quote": "Or, in some cases, we can actively “treat” the system—that is, change the system in a controlled way—and observe the results.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Production is read-only for you"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the rows.**"
+   }
+  ],
+  "reason": "active treatment of production is a write, so the skill routes it through the user"
+ },
+ {
+  "id": "T3",
+  "claim": "A problem report states the expected behaviour, the actual behaviour and how to reproduce it; every issue gets a bug so the investigation is logged.",
+  "quote": "An effective report should tell you the expected behavior, the actual behavior, and, if possible, how to reproduce the behavior.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Read the bug report in full"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Facts** are data a tool or a person gathered"
+   }
+  ]
+ },
+ {
+  "id": "T4",
+  "claim": "Triage first: make the system work as well as it can before root-causing, while preserving evidence; stopping the bleeding comes before diagnosis.",
+  "quote": "Stopping the bleeding should be your first priority; you aren’t helping your users if the system dies while you’re root-causing.",
+  "status": "rejected",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "If one fix fits, state it"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Production is read-only for you"
+   }
+  ],
+  "reason": "the after-fix behavioural run offered the flag-off mitigation as the user's call in its first lines without a line asking for it, and no session showed the agent root-causing while users were hurt; mitigation stays a Step 4 decision for the user"
+ },
+ {
+  "id": "T5",
+  "claim": "Examine metrics, logs, traces and endpoints that expose current state; instrument a client when needed.",
+  "quote": "Exposing current state is the third trick in our toolbox.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/LAYERS.md",
+    "anchor": "| Fact | Where |"
+   },
+   {
+    "file": "debugging-by-constraints/LAYERS.md",
+    "anchor": "## 4. Process and runtime"
+   }
+  ]
+ },
+ {
+  "id": "T6",
+  "claim": "Simplify and reduce: inject known test data at component boundaries, divide and conquer along the stack, bisect in large systems.",
+  "quote": "Dividing and conquering is a very useful general-purpose solution technique.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/LAYERS.md",
+    "anchor": "The first step where they differ holds the cause"
+   }
+  ]
+ },
+ {
+  "id": "T7",
+  "claim": "Ask what the system is doing, where its resources go and why, instead of what it should be doing.",
+  "quote": "Finding out what it’s doing, then asking why it’s doing that and where its resources are being used or where its output is going can help you understand how things have gone wrong.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Code is an _unreliable narrator_"
+   },
+   {
+    "file": "debugging-by-constraints/LAYERS.md",
+    "anchor": "## 4. Process and runtime"
+   }
+  ]
+ },
+ {
+  "id": "T8",
+  "claim": "What touched it last: recent changes to config, binaries or load are the productive starting point, and systems should log every deploy and config change.",
+  "quote": "Recent changes to a system can be a productive place to start identifying what’s going wrong.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "List every change in the window"
+   }
+  ]
+ },
+ {
+  "id": "T9",
+  "claim": "Design tests whose outcomes rule hypotheses in and out, run them in decreasing order of likelihood weighed by risk, and watch for confounders and side effects.",
+  "quote": "An ideal test should have mutually exclusive alternatives, so that it can rule one group of hypotheses in and rule another set out.",
+  "status": "rejected",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the columns.**"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "## Step 0: Gather facts, cheapest first"
+   }
+  ],
+  "reason": "candidate line: gather next the fact whose value differs between the surviving rows. Rejected by the gate: both behavioural runs already ordered their ? facts by what would break the winning row, and no session showed a wasted test. The one calibration cell that stayed low (0.45) with action wording"
+ },
+ {
+  "id": "T10",
+  "claim": "Take clear notes of ideas, tests and results, and return the system to its pre-test state.",
+  "quote": "Take clear notes of what ideas you had, which tests you ran, and the results you saw.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Keep the numbered fact list and the matrix in one working file"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Remove every debug probe you added"
+   }
+  ]
+ },
+ {
+  "id": "T11",
+  "claim": "Negative results are conclusive and worth recording: what was ruled out saves the next investigation.",
+  "quote": "Negative results should not be ignored or discounted.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Give the fact list, the matrix, the winning row and its strongest signal"
+   }
+  ],
+  "reason": "the matrix in the report records every killed row"
+ },
+ {
+  "id": "T12",
+  "claim": "Causes are often several factors that are jointly sufficient, and systems are path-dependent; proving causation by reproduction at will is often impossible.",
+  "quote": "It’s quite likely that there are multiple factors, each of which individually is not the cause, but which taken jointly are causes.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Each fact is a _constraint_"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Repro parity.**"
+   }
+  ]
+ },
+ {
+  "id": "T13",
+  "claim": "A correlation that looks causal can be spurious; one fact it cannot explain, such as static content also slowing, kills it.",
+  "quote": "This implied that the observed correlation between merge_join and the latency increase was spurious and that our suboptimal-indexing theory was fatally flawed.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the rows.**"
+   }
+  ]
+ },
+ {
+  "id": "T14",
+  "claim": "Make troubleshooting easier by building white-box metrics and structured logs into every component and carrying one request id through every hop.",
+  "quote": "using a unique request identifier throughout the span of RPCs generated by various components",
+  "status": "infra",
+  "refs": [
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "When only production can show the signal"
+   }
+  ],
+  "reason": "a request id across components is a platform property; the plan skill asks for emitted signals, not for tracing infrastructure"
+ },
+ {
+  "id": "T15",
+  "claim": "When a mystery cannot be solved before a deadline, mitigate, ship, and investigate at leisure; that is a decision with the user.",
+  "quote": "we recommended that the customer increase the resources allocated to their app to the most CPU-rich instance type available",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "If one fix fits, state it"
+   }
+  ]
+ }
+]

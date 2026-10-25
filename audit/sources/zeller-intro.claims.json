@@ -1,0 +1,165 @@
+[
+ {
+  "id": "Z1",
+  "claim": "Fix the problem, not the symptom; never patch at random or special-case the failing input.",
+  "quote": "Fix the problem, not the symptom",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "If one fix fits, state it"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Check the fix against the intended-behaviour facts"
+   }
+  ]
+ },
+ {
+  "id": "Z2",
+  "claim": "A failure is the end of a chain mistake, defect, fault, failure; debugging searches for the step where the state first becomes faulty.",
+  "quote": "The goal of debugging thus is to search for the step in which the state first becomes faulty.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/LAYERS.md",
+    "anchor": "The first step where they differ holds the cause"
+   }
+  ]
+ },
+ {
+  "id": "Z3",
+  "claim": "The scientific method: a hypothesis yields a prediction that distinguishes it from the alternatives, an experiment tests it, and the cycle repeats until nothing is left unexplained.",
+  "quote": "Ideally, the prediction would distinguish the hypothesis from likely alternatives.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Read the columns.**"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Done when exactly one row is ✓ in every cell"
+   }
+  ]
+ },
+ {
+  "id": "Z4",
+  "claim": "Keep a log of observations and hypotheses; every new hypothesis is checked against earlier observations, and the log lets the work pause or change hands.",
+  "quote": "Every time you come up with a new hypothesis, you can immediately check it against your earlier observations, which will help you to eliminate unlikely ones from the start.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Keep the numbered fact list and the matrix in one working file"
+   }
+  ]
+ },
+ {
+  "id": "Z5",
+  "claim": "Assertions encode assumptions and break the cause-effect chain into smaller pieces; the invariant the bug violated stays in the code as an assertion.",
+  "quote": "assert statements break the cause-effect chain into smaller pieces.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Write a regression test at a seam"
+   },
+   {
+    "file": "debug-retro/SKILL.md",
+    "anchor": "**constraint:** the fact that should be gathered by default"
+   }
+  ]
+ },
+ {
+  "id": "Z6",
+  "claim": "Fix only with a diagnosis that shows both causality, how the defect produces the failure, and incorrectness, why the code is wrong.",
+  "quote": "In debugging, you should start to fix your code if and only if you have a diagnosis that shows two things:",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Check the winning row against every fact, noise included"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Check the fix against the intended-behaviour facts"
+   }
+  ]
+ },
+ {
+  "id": "Z7",
+  "claim": "After the fix, check whether the same mistake was made elsewhere, add a test that catches it, commit with the diagnosis, and close duplicates.",
+  "quote": "First, we may want to check that the underlying mistake was not made elsewhere, too.",
+  "status": "gap",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Search for the same mistake elsewhere",
+    "added": "v0.5.0"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Write a regression test at a seam"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "In the commit or PR, state the cause"
+   }
+  ],
+  "reason": "no step searched for the same mistake elsewhere; in session 820dbd4f the human had to decide to fix the shared query instead of each caller"
+ },
+ {
+  "id": "Z8",
+  "claim": "Explaining the problem to someone else surfaces the inconsistency between assumption and observation.",
+  "quote": "teaching someone else forces you to take different perspectives",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "**Review.**"
+   }
+  ]
+ },
+ {
+  "id": "Z9",
+  "claim": "Follow the process even when the fix looks obvious; jumping to the debugger narrows the view to one execution.",
+  "quote": "have a full diagnosis before starting to fix away.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Code is an _unreliable narrator_"
+   },
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "Read code to explain the bug only after this"
+   }
+  ]
+ },
+ {
+  "id": "Z10",
+  "claim": "Random patching until the tests pass leads to harder bugs later.",
+  "quote": "Randomly patching code will just lead to harder to find bugs.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "If one fix fits, state it"
+   }
+  ]
+ },
+ {
+  "id": "Z11",
+  "claim": "Leave a comment at the fixed location that explains why the code now looks this way.",
+  "quote": "A comment right at the fixed location",
+  "status": "rejected",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "In the commit or PR, state the cause"
+   }
+  ],
+  "reason": "the house rule allows comments only for constraints from outside the codebase; the commit message carries the cause, the signal and the control"
+ }
+]

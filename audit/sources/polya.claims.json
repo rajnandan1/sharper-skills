@@ -1,0 +1,147 @@
+[
+ {
+  "id": "P1",
+  "claim": "Four phases: understand the problem, devise a plan that connects the unknown to the data, carry it out checking each step, look back.",
+  "quote": "First, we have to understand the problem; we have to see clearly what is required.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "## 1. Answer four questions"
+   },
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Outside judge**"
+   }
+  ]
+ },
+ {
+  "id": "P2",
+  "claim": "Inventor's paradox: the more ambitious plan may have more chances of success, when it rests on a vision of things beyond those present.",
+  "quote": "The more ambitious plan may have more chances of success.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "A task is the user's best guess at how to get an outcome"
+   },
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Beyond**"
+   }
+  ]
+ },
+ {
+  "id": "P3",
+  "claim": "Vary the problem when stuck: try other sides and aspects instead of the same attempt again.",
+  "quote": "we try various sides and aspects, we vary the problem.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "Other lenses:"
+   },
+   {
+    "file": "wider/SKILL.md",
+    "anchor": "**Verbs**"
+   }
+  ],
+  "reason": "the three lenses are three variations, and each hands off to the others"
+ },
+ {
+  "id": "P4",
+  "claim": "Devise an auxiliary problem, a stepping stone, when the original appears insoluble.",
+  "quote": "Human superiority consists in going around an obstacle that cannot be overcome directly, in devising a suitable auxiliary problem when the original problem appears insoluble.",
+  "status": "rejected",
+  "refs": [],
+  "reason": "no session or run stalled on an insoluble task; the sad-path control in debugging is the nearest existing move"
+ },
+ {
+  "id": "P5",
+  "claim": "Work backwards from the goal to the data.",
+  "quote": "Working backwards is a common-sense procedure",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Purpose**"
+   },
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Beyond**"
+   }
+  ]
+ },
+ {
+  "id": "P6",
+  "claim": "Look back: check the result, derive it differently, and reuse the result or the method for another problem.",
+  "quote": "Can you derive the result differently?",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Outside judge**"
+   },
+   {
+    "file": "debug-retro/SKILL.md",
+    "anchor": "Each time the human stepped in during a debug session"
+   }
+  ]
+ },
+ {
+  "id": "P7",
+  "claim": "Understand before you answer: it is foolish to answer a question you do not understand; restate the problem.",
+  "quote": "It is foolish to answer a question that you do not understand.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "wider/SKILL.md",
+    "anchor": "**Verbs**"
+   },
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Purpose**"
+   }
+  ]
+ },
+ {
+  "id": "P8",
+  "claim": "Specialization: pass from a set to one object in it; test a special case first.",
+  "quote": "Specialization is passing from the consideration of a given set of objects to that of a smaller set, or of just one object, contained in the given set.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "debugging-by-constraints/SKILL.md",
+    "anchor": "The **variable** is the broken case"
+   }
+  ]
+ },
+ {
+  "id": "P9",
+  "claim": "Generalization: pass from one object to a set that contains it.",
+  "quote": "Generalization is passing from the consideration of one object to the consideration of a set",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "higher/SKILL.md",
+    "anchor": "**Standing condition**"
+   }
+  ]
+ },
+ {
+  "id": "P10",
+  "claim": "The best effects are lost when the solver fails to re-examine the completed solution.",
+  "quote": "Some of the best effects may be lost if the student fails to reexamine and to reconsider the completed solution.",
+  "status": "covered",
+  "refs": [
+   {
+    "file": "deeper/SKILL.md",
+    "anchor": "**Outside judge**"
+   },
+   {
+    "file": "signal-first-plan/SKILL.md",
+    "anchor": "previous successful run"
+   }
+  ]
+ }
+]
