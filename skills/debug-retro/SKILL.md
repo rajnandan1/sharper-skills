@@ -17,7 +17,7 @@ Read this conversation from the start of the debug session. An intervention is a
 | control | gave a comparison case, or asked the agent to set one up |
 | fact | supplied data, or pointed at data the agent had not gathered |
 | constraint | pushed back with a fact that killed a hypothesis |
-| proxy | ran a command or pasted output the agent could have run itself |
+| proxy | ran a command, pasted output or a screenshot, or quoted a dashboard number the agent could have read itself |
 | method | told the agent how to work: run the repro, cite, split the hypothesis, go a layer down |
 | decision | picked a fix, or made a rollback, escalation or scope call |
 

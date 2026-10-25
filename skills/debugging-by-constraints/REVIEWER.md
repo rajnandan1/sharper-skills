@@ -1,6 +1,6 @@
 # Reviewer brief
 
-Pass this file to a fresh subagent with: the numbered fact list with sources and code facts, the control and variable, and the hypotheses-by-fact matrix with its winning row. Leave out the main agent's narrative and the code it read.
+Pass this file to a fresh subagent with: the numbered fact list with sources and code facts, the control and variable, and the hypotheses-by-fact matrix with its winning row. Leave out the main agent's narrative and the code it read. The review runs three times: items 1 to 3 at the end of Step 1, items 4 and 5 at the end of Step 2, and all eight items at Step 3. A new subagent each time.
 
 ---
 
