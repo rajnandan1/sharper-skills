@@ -32,10 +32,6 @@ Done when each heading names something concrete that applies to this task and no
 
 Write the prompt the user should have sent: it asks for exactly the four answers above. Keep the user's goal, facts, names, and numbers verbatim. Same deliverable, same scope. Put it in one fenced code block.
 
-## 3. Judge it
+## 3. Hand it back
 
-Invoke the judge skill and run the `deeper` battery with `original` set to the task and `rewrite` set to the new prompt, state passed inline. On `act`, continue. On `confirm` or `escalate`, fix the rewrite once for the failing answer and run the battery again. Print one line with the final verdict and any answer still below its threshold. If the judge skill is not installed, or it reports no battery by that name, print "judge: skipped".
-
-## 4. Hand it back
-
-Output is the four headings, the code block, the verdict line, and this closing line: "Reply `go` to run it, or edit it first. Other lenses: `/higher` if a meeting will discuss this, `/wider` if it must be great on several fronts." Running the rewrite is the user's call.
+Output is the four headings, the code block and this closing line: "Reply `go` to run it, or edit it first. Other lenses: `/higher` if a meeting will discuss this, `/wider` if it must be great on several fronts." Running the rewrite is the user's call.

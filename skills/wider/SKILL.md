@@ -31,10 +31,6 @@ Done when each field carries a method specific enough to run on this task, not a
 
 Write the prompt the user should have sent: it asks for the same deliverable, done with the crew's methods and attacked by the red team's method before the user sees it. Each method is written as what to do, not who to be. When the fields can work apart, the prompt says so, so each can run as its own subagent. Keep the user's facts, names, and numbers verbatim. Put it in one fenced code block.
 
-## 3. Judge it
+## 3. Hand it back
 
-Invoke the judge skill and run the `wider` battery with `original` set to the task and `rewrite` set to the new prompt, state passed inline. On `act`, continue. On `confirm` or `escalate`, fix the rewrite once for the failing answer and run the battery again. Print one line with the final verdict and any answer still below its threshold. If the judge skill is not installed, or it reports no battery by that name, print "judge: skipped".
-
-## 4. Hand it back
-
-Output is the three headings, the code block, the verdict line, and this closing line: "Reply `go` to run it, or edit it first. Other lenses: `/higher` if a meeting will discuss this, `/deeper` if it must be right." Running the rewrite is the user's call.
+Output is the three headings, the code block and this closing line: "Reply `go` to run it, or edit it first. Other lenses: `/higher` if a meeting will discuss this, `/deeper` if it must be right." Running the rewrite is the user's call.

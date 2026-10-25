@@ -22,15 +22,6 @@ Installed as a plugin, each skill also answers to its prefixed name, such as `/s
 
 1. In Claude Code, run `/plugin marketplace add rajnandan1/sharper-skills`.
 2. Run `/plugin install sharper-skills@sharper-skills`.
-3. Optional, for the three lenses. Each lens judges its own rewrite with the judge skill from the sensibility plugin (https://github.com/rajnandan1/sensibility). The judge asks Jev, TypeSafe's judgment model, a fixed set of questions called a battery. Install sensibility, then copy the three batteries from this repo into the folder the judge searches:
-
-   ```
-   mkdir -p ~/.claude/sensibility/batteries
-   cp ~/.claude/plugins/marketplaces/sharper-skills/batteries/*.json ~/.claude/sensibility/batteries/
-   ```
-
-   Without the judge skill or the batteries, the lenses print `judge: skipped` and still hand you the rewrite.
-
 To install without the plugin system, copy the folders under `skills/` into `~/.claude/skills/`.
 
 ## Where learned rules go
