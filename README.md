@@ -71,13 +71,6 @@ Copy the folders you want from `skills/` into the folder your agent reads:
 - Felix Rieseberg, "How to be more ambitious: A tutorial for humans with models": https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/
 - copyconstruct, "How to effectively debug when you no longer understand the code": https://copyconstruct.medium.com/how-to-effectively-debug-when-you-no-longer-understand-the-code-bd3dcb2c5f7b
 
-## Logo
-
-The logo files and a one-page usage guide live in `brand/`. The symbol is the `>` prompt sign drawn as two blades that taper to one point.
-
-## How the skills are checked
-
-Each release is audited against the written sources the skills come from and against the sessions where they ran. The audit lives in `audit/`: a claim list with verbatim quotes per source, a matrix of claims against skill lines judged by Jev, a classifier for what the human had to do after a skill ran, and a behavioural run of each skill family on a fixed case. The latest release at https://github.com/rajnandan1/sharper-skills/releases carries the full report. `sh audit/run.sh` re-runs it.
 
 ## License
 
