@@ -21,7 +21,7 @@ The other three skills work from evidence. They come from copyconstruct's post "
 
 The last skill checks you, not the agent. It comes from Addy Osmani's post "Critical thinking when agents do the work".
 
-- `/defend` runs after a change, before you merge. It writes an HTML report on the change: the context, the intuition, what changed, the decisions and assumptions the agent made, and what the checks prove. It also covers the existing code the change relies on. Questions at the bottom ask you to reason with the change. You answer in your own words, and the agent grades each answer against a rubric it wrote first. You merge after every answer is right.
+- `/defend` runs after a session or a change. It writes an HTML report on what the session decided and changed: the context, the intuition, each decision with who made it and the evidence behind it, and, for code, the existing code the change relies on. Questions at the bottom ask you to reason with the work, starting with the decisions you agreed to in a quick reply. You answer in your own words, and the agent grades each answer against a rubric it wrote first. The pass mark is every answer right. What you do next, such as a merge, is your call.
 
 ## Install
 
