@@ -3,7 +3,7 @@
   <img alt="sharper-skills" src="brand/sharper-skills-horizontal.svg" width="480">
 </picture>
 
-Six skills for coding agents that make the agent more precise before it acts. Each skill is a folder with a `SKILL.md` file. Any agent that reads that format can use it: Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot, and others. None of them does the task. Each one shapes the prompt, the plan, the investigation, or the next session.
+Seven skills for coding agents. Six make the agent more precise before it acts. One checks that you understand what it did. Each skill is a folder with a `SKILL.md` file. Any agent that reads that format can use it: Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot, and others. None of them does the task. Each one shapes the prompt, the plan, the investigation, the next session, or your understanding of the change.
 
 ## The skills
 
@@ -17,7 +17,11 @@ The other three skills work from evidence. They come from copyconstruct's post "
 
 - `signal-first-plan` runs before you build a feature. It lists every exit the feature's data leaves through. It puts a countable signal on each exit. It checks the signals against main, the branch before your change. The agent invokes it on its own when you ask for behaviour that ships to users or other systems.
 - `debugging-by-constraints` runs on production bugs and review findings. It gathers facts first. It picks a control, a case that is equal to the broken one except for the suspected difference. It builds a matrix of hypotheses against facts. It keeps the one hypothesis that fits every fact. The agent invokes it on its own. You can also run `/debugging-by-constraints`.
-- `/debug-retro` runs after a debug session. It counts each time you had to step in. It turns each one into a lasting rule. It has had the least use of the six.
+- `/debug-retro` runs after a debug session. It counts each time you had to step in. It turns each one into a lasting rule. It has had the least use so far.
+
+The last skill checks you, not the agent. It comes from Addy Osmani's post "Critical thinking when agents do the work".
+
+- `/defend` runs after a session or a change. It writes an HTML report on what the session decided and changed: the context, the intuition, each decision with who made it and the evidence behind it, and, for code, the existing code the change relies on. Questions at the bottom ask you to reason with the work, starting with the decisions you agreed to in a quick reply. You answer in your own words, and the agent grades each answer against a rubric it wrote first. The pass mark is every answer right. What you do next, such as a merge, is your call.
 
 ## Install
 
@@ -31,7 +35,7 @@ The `skills` CLI from Vercel Labs installs skills from a GitHub repo into the fo
 npx skills add rajnandan1/sharper-skills
 ```
 
-The CLI lists the six skills and the agents it finds on your machine. You pick the skills and the agents you want. The CLI installs the skills into the current project. Add `-g` to install them for every project.
+The CLI lists the seven skills and the agents it finds on your machine. You pick the skills and the agents you want. The CLI installs the skills into the current project. Add `-g` to install them for every project.
 
 To skip the prompts, name the skills and the agents:
 
@@ -45,7 +49,7 @@ npx skills add rajnandan1/sharper-skills --skill debugging-by-constraints --skil
 
 Only Claude Code fills in the `<task>` argument. In every other agent, the three lenses take the task from your last message.
 
-### Claude Code, all six as a plugin
+### Claude Code, all seven as a plugin
 
 1. Run `/plugin marketplace add rajnandan1/sharper-skills`.
 2. Run `/plugin install sharper-skills@sharper-skills`.
@@ -70,6 +74,7 @@ Copy the folders you want from `skills/` into the folder your agent reads:
 
 - Felix Rieseberg, "How to be more ambitious: A tutorial for humans with models": https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/
 - copyconstruct, "How to effectively debug when you no longer understand the code": https://copyconstruct.medium.com/how-to-effectively-debug-when-you-no-longer-understand-the-code-bd3dcb2c5f7b
+- Addy Osmani, "Critical thinking when agents do the work": https://x.com/addyosmani/status/2117512471930167377
 
 
 ## License
