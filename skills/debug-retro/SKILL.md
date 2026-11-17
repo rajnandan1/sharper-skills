@@ -1,6 +1,6 @@
 ---
 name: debug-retro
-description: After a debug session, count each time you had to step in and turn each one into a lasting rule. /debug-retro
+description: Runs only when the user asks for /debug-retro by name. After a debug session, count each time you had to step in and turn each one into a lasting rule. /debug-retro
 disable-model-invocation: true
 ---
 
@@ -32,7 +32,7 @@ For each intervention, propose the smallest lasting change that would have let t
 - **control, fact, proxy:** a line in `.claude/debug-layers.md` at the project root. Create the file if it is missing, with the heading `# Debug layers: learned in this codebase`. Give the source, the exact query or command, and the signal it showed. If no tool could reach the data, name the missing access (an MCP server, a read-only credential) as a follow-up for the user.
 - **constraint:** the fact that should be gathered by default, written as above. If the missing piece was a design rule in the code ("this state machine is single-use"), name a test that would enforce it as a follow-up in the repo.
 - **method:** check the debugging-by-constraints SKILL.md first. If the skill lacks the rule, propose the rule. If the skill has it and the agent skipped it, the wording is too weak: propose sharper wording for that line. The home is an issue or pull request at https://github.com/rajnandan1/sharper-skills with the exact line, because the installed skill files belong to the plugin and an update overwrites them.
-- **decision:** a policy line in the project `CLAUDE.md` or a feedback memory, only when the call will come up again ("roll back a slow but correct feature when p99 doubles for 15 minutes"). A one-off call stays one-off.
+- **decision:** a policy line in the instruction file this agent already loads in this project, or a feedback memory where the agent has one, only when the call will come up again ("roll back a slow but correct feature when p99 doubles for 15 minutes"). The file is `CLAUDE.md` in Claude Code, `GEMINI.md` in Gemini CLI, and `AGENTS.md` in Codex, Cursor and OpenCode; OpenCode reads `CLAUDE.md` only when no `AGENTS.md` exists. Never create a second instruction file. A one-off call stays one-off.
 - **a signal that took a layer descent to find:** a follow-up for the codebase that names the log line or metric to emit by default, so the next session finds it at layer 1.
 
 ## 3. Show, then write

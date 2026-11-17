@@ -1,17 +1,13 @@
 ---
 name: higher
-description: Rewrite a task to ask for the goal beyond the goal. /higher <task>, or /higher alone for your last request.
+description: Runs only when the user asks for /higher by name. Rewrite a task to ask for the goal beyond the goal. /higher <task>, or /higher alone for your last request.
 argument-hint: "[task]"
 disable-model-invocation: true
 ---
 
 # /higher
 
-Raise this task one level, from the task to the outcome it serves:
-
-$ARGUMENTS
-
-If the task above is empty, the task is the user's most recent request in this conversation.
+Raise the user's task one level, from the task to the outcome it serves. The task is the text the user typed after the skill's name. Claude Code adds that text at the end of this skill as an `ARGUMENTS:` line. If the user typed nothing after the name, the task is the user's most recent request in this conversation.
 
 A task is the user's best guess at how to get an outcome. Higher means asking for the outcome instead: the decision instead of the deck, the standing condition instead of the one-off fix, "keep the apps crash-free" instead of "fix this crash". Each call climbs one rung; the user runs `/higher` on the result to climb again. The output of this skill is a prompt, not the task's result.
 

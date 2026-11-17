@@ -47,8 +47,6 @@ npx skills add rajnandan1/sharper-skills --skill debugging-by-constraints --skil
 
 `npx skills update` pulls new versions later. `npx skills remove deeper` removes one skill.
 
-Only Claude Code fills in the `<task>` argument. In every other agent, the three lenses take the task from your last message.
-
 ### Claude Code, all seven as a plugin
 
 1. Run `/plugin marketplace add rajnandan1/sharper-skills`.
@@ -58,11 +56,17 @@ When you install the plugin, each skill also answers to its prefixed name, such 
 
 ### By hand
 
-Copy the folders you want from `skills/` into the folder your agent reads:
+Copy the whole folder of each skill you want from `skills/` into the folder your agent reads. The folders of `deeper`, `higher`, `wider`, `defend` and `debug-retro` hold an `agents/` folder for Codex; copy it too (see Start a skill).
 
 - Claude Code reads `~/.claude/skills/`.
 - Codex reads `~/.agents/skills/`.
 - Cursor reads `~/.cursor/skills/`.
+
+## Start a skill
+
+To start a skill yourself, type its name and then the task, such as `/deeper add retry logic`. Codex uses `$deeper` instead of `/deeper`. If you type only the name, the three lenses (`deeper`, `higher`, `wider`) work on your last message in the conversation, and `defend` works on everything the conversation produced.
+
+`signal-first-plan` and `debugging-by-constraints` also start on their own when your task matches their description. The other five, `deeper`, `higher`, `wider`, `defend` and `debug-retro`, are meant to start only when you type their name. Claude Code and Cursor wait for you because of the `disable-model-invocation: true` line at the top of each of those five `SKILL.md` files. Codex waits because of the `agents/openai.yaml` file in each of those five skill folders. The OpenCode, Hermes and Gemini CLI agents have no such setting, so their model can start one of the five unasked. `defend` writes an HTML report and a rubric file, and `debug-retro` writes rules to `.claude/debug-layers.md` and to the project's instruction file (`CLAUDE.md`, `AGENTS.md` or `GEMINI.md`), so an unasked start can leave files you did not ask for. You can still install the five in those agents. To rule out unasked starts there, install only the other two: `npx skills add rajnandan1/sharper-skills --skill signal-first-plan --skill debugging-by-constraints`.
 
 ## Where learned rules go
 
