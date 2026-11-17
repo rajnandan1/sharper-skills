@@ -1,17 +1,13 @@
 ---
 name: deeper
-description: Rewrite a task to ask for the deeper version, not the bigger one. /deeper <task>, or /deeper alone to deepen your last request.
+description: Runs only when the user asks for /deeper by name. Rewrite a task to ask for the deeper version, not the bigger one. /deeper <task>, or /deeper alone to deepen your last request.
 argument-hint: "[task]"
 disable-model-invocation: true
 ---
 
 # /deeper
 
-Make this task deeper, not bigger:
-
-$ARGUMENTS
-
-If the task above is empty, the task is the user's most recent request in this conversation.
+Make the user's task deeper, not bigger. The task is the text the user typed after the skill's name. Claude Code adds that text at the end of this skill as an `ARGUMENTS:` line. If the user typed nothing after the name, the task is the user's most recent request in this conversation.
 
 Deeper means the inputs, methods, and checks a top professional in the field would use. Bigger means more deliverables. The deliverable stays the same. The output of this skill is a prompt, not the task's result.
 

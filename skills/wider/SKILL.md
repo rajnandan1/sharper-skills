@@ -1,17 +1,13 @@
 ---
 name: wider
-description: Rewrite a task to bring in the methods of other fields. /wider <task>, or /wider alone for your last request.
+description: Runs only when the user asks for /wider by name. Rewrite a task to bring in the methods of other fields. /wider <task>, or /wider alone for your last request.
 argument-hint: "[task]"
 disable-model-invocation: true
 ---
 
 # /wider
 
-Bring other fields into this task:
-
-$ARGUMENTS
-
-If the task above is empty, the task is the user's most recent request in this conversation.
+Bring other fields into the user's task. The task is the text the user typed after the skill's name. Claude Code adds that text at the end of this skill as an `ARGUMENTS:` line. If the user typed nothing after the name, the task is the user's most recent request in this conversation.
 
 Wider means the task gets the methods of fields it would not normally afford: the analyst, the journalist, and the editor on one deck, and a short seller to attack it. Same deliverable. Methods, not characters: ask for what a short seller does to research a position, never for a short seller to play. The output of this skill is a prompt, not the task's result.
 

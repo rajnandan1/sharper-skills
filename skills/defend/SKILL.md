@@ -1,6 +1,6 @@
 ---
 name: defend
-description: Turn a session's decisions, or a code change, into an HTML report with questions at the bottom. You answer in your own words, and the agent grades. /defend, or /defend <PR, branch, commit range or topic>.
+description: Runs only when the user asks for /defend by name. Turn a session's decisions, or a code change, into an HTML report with questions at the bottom. You answer in your own words, and the agent grades. /defend, or /defend <PR, branch, commit range or topic>.
 argument-hint: "[PR, branch, commit range or topic]"
 disable-model-invocation: true
 ---
@@ -9,9 +9,7 @@ disable-model-invocation: true
 
 The user wants to understand this work well enough to defend it: to explain each decision, and each line of any code, to the person who will live with it. The main targets are the decisions the user agreed to with a quick "yes": a well-written proposal is easy to accept without a view of one's own. The output is an HTML report with questions at the bottom. The user answers in their own words, and you grade each answer against a rubric you wrote first.
 
-Work: $ARGUMENTS
-
-If the work above is empty, it is everything this conversation produced: the decisions, conclusions and plans it reached, the documents it wrote, and the code it changed. A PR, branch, commit range or topic narrows it. If this conversation produced nothing, the work is the current branch against its base, plus uncommitted work.
+The work is the text the user typed after the skill's name. Claude Code adds that text at the end of this skill as an `ARGUMENTS:` line. If the user typed nothing after the name, the work is everything this conversation produced: the decisions, conclusions and plans it reached, the documents it wrote, and the code it changed. A PR, branch, commit range or topic narrows it. If this conversation produced nothing, the work is the current branch against its base, plus uncommitted work.
 
 ## 1. Gather the work
 
