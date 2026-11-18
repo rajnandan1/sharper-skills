@@ -86,14 +86,15 @@ Done when:
 
 ## Step 4: Fix
 
-1. If one fix fits, state it. If more than one fits (remove the cache, or make the state machine safe to re-enter), list each with its tradeoff and your reasoning, and ask the user to pick before you change code. Calls that carry accountability go to the user the same way: roll back, escalate to another team, drop a feature.
-2. Check the fix against the intended-behaviour facts. When it changes who sees what, or behaviour those facts describe, match them. Where they are silent or disagree, ask the user.
-3. Write a regression test at a seam that shows the real signal, and see it go red with that signal on the unfixed code. If no seam can show it, say so.
-4. Gather the strongest signal again with the same query as its fact: rerun the repro after the fix, and run the query again over a window after the fix ships. A fix that leaves the signal is a new fact: add it to the fact list, mark the winning row ✗, and go back to Step 2. The next change waits for a new winning row, and keeping or reverting the failed fix is the user's call, as in item 1.
-5. Search for the same mistake elsewhere: other callers of the fixed path, and other code written to the same pattern. Fix them in the same change, or list them in the PR.
-6. Update every doc, help text and test that describes the changed behaviour.
-7. Remove every debug probe you added.
-8. In the commit or PR, state the cause, the strongest signal with its value before and after the fix, and the control.
+1. Treat fix options the way Step 2 treats hypotheses. List every place the winning row's mechanism can be acted on, not only the first one the facts support. Draw a fix-by-fact matrix: one row per option, one column per fact, and in each cell ✓ (the fact says the option removes that part of the symptom), ✗ (the fact says it does not), or ? (unknown). A ? is a fact to gather, not a reason to rank the option lower. Gather each ? you can reach without changing production before you recommend; name the rest, and say which options stay unranked because of them.
+2. If one fix fits, state it. If more than one fits (remove the cache, or make the state machine safe to re-enter), list each with its tradeoff and your reasoning, and ask the user to pick before you change code. Calls that carry accountability go to the user the same way: roll back, escalate to another team, drop a feature.
+3. Check the fix against the intended-behaviour facts. When it changes who sees what, or behaviour those facts describe, match them. Where they are silent or disagree, ask the user.
+4. Write a regression test at a seam that shows the real signal, and see it go red with that signal on the unfixed code. If no seam can show it, say so.
+5. Gather the strongest signal again with the same query as its fact: rerun the repro after the fix, and run the query again over a window after the fix ships. A fix that leaves the signal is a new fact: add it to the fact list, mark the winning row ✗, and go back to Step 2. The next change waits for a new winning row, and keeping or reverting the failed fix is the user's call, as in item 2.
+6. Search for the same mistake elsewhere: other callers of the fixed path, and other code written to the same pattern. Fix them in the same change, or list them in the PR.
+7. Update every doc, help text and test that describes the changed behaviour.
+8. Remove every debug probe you added.
+9. In the commit or PR, state the cause, the strongest signal with its value before and after the fix, and the control.
 
 Done when the strongest signal, gathered again after the fix ships, is gone. When nothing can make it show on demand, give the user the exact query and time window that will show it, and say the check is still open.
 
