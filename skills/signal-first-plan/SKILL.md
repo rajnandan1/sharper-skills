@@ -30,7 +30,15 @@ A signal is a number that a broken version changes: DNS lookups per request, row
 - On a response exit, count over the whole body the client receives (the serialized page data or JSON), not over the one field you expect to carry the data. A leak sits in the field nobody planned for.
 - A number that the working and the broken version share is noise. Pick another.
 - Aggregates such as p99 and error rate are weak, because many causes move them. Prefer a count tied to one exit.
-- Read `.claude/debug-layers.md` at the project root, when it exists, for signals that past bugs needed. Each one that touches an exit of this feature becomes a check in Step 3.
+- `/debug-retro` keeps the signals that past bugs in this project needed in a store file outside the repo. When the file exists, read it with this block, run as written. Each signal in it that touches an exit of this feature becomes a check in Step 3.
+
+  ```sh
+  key=$(git remote get-url origin 2>/dev/null | sed -E 's#^[a-z+]+://##; s#^[^@/]*@##; s#:[0-9]+/#/#; s#:#/#; s#\.git$##; s#/$##; s#\.\.#_#g' | tr 'A-Z' 'a-z')
+  [ -n "$key" ] || key=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null | sed 's#/\.git$##')
+  [ -n "$key" ] || key=$(pwd -P)
+  store="$HOME/.sharper-skills/${key#/}"
+  cat "$store/debug-layers.md" 2>/dev/null || echo "No store file yet."
+  ```
 
 Done when every exit has a signal and an expected value for every case.
 
@@ -49,6 +57,6 @@ Show the user the plan as a table, then build: exit, signal, expected value per 
 
 1. After you build, run every check on main and on the branch.
 2. List each signal that changed. Every change must be one the plan expected. Fix any other change before merge.
-3. For a signal that only production or pre-production can show, compare the canary population against the control population at the same time, broken down by population, when the rollout gives you one. A before-and-after comparison of one population against its previous successful run is the fallback; time of day and load move it, so say so in the PR. Check the control against its own baseline too, because a bad canary can hurt the control it is compared with. Never an absolute threshold alone, and not only pass or fail. This applies to every signal in the plan, including the ones taken from `.claude/debug-layers.md`. The copyconstruct post's DNS lookup count differed from the previous successful run even at pre-production scale, so this check would have caught that bug before production.
+3. For a signal that only production or pre-production can show, compare the canary population against the control population at the same time, broken down by population, when the rollout gives you one. A before-and-after comparison of one population against its previous successful run is the fallback; time of day and load move it, so say so in the PR. Check the control against its own baseline too, because a bad canary can hurt the control it is compared with. Never an absolute threshold alone, and not only pass or fail. This applies to every signal in the plan, including the ones taken from the store file. The copyconstruct post's DNS lookup count differed from the previous successful run even at pre-production scale, so this check would have caught that bug before production.
 4. Before you commit, list every file in the diff. Generated files, such as test screenshots and attachments, stay out unless the plan named them.
 5. In the PR, give the exit table and the comparison.

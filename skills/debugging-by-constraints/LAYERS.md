@@ -50,4 +50,4 @@ For a logic bug, the layers are the steps a request passes through. Compare cont
 
 ## Learned in this codebase
 
-Signals and sources that past debug sessions found live in `.claude/debug-layers.md` at the project root, not in this file. `/debug-retro` adds lines there: the source, the exact query or command, and the signal it showed. Read that file before you go down a layer.
+Signals and sources that past debug sessions found live in `~/.sharper-skills/<project>/debug-layers.md`, which SKILL.md Step 0 item 4 reads, not in this file. `/debug-retro` adds lines there: the source, the exact query or command, and the signal it showed. Read that file before you go down a layer.
