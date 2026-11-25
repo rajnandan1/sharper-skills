@@ -1,0 +1,27 @@
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-11-25T13:48:52.180Z",
+        "reason": "brand commitment: Paper #F4F2EC is the pinned ground colour in brand/GUIDELINES.md, recorded under Brand Commitments in PRODUCT.md"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "site/styles.css"
+        ],
+        "createdAt": "2026-11-25T13:48:52.193Z",
+        "reason": "brand commitment: Paper #F4F2EC is the pinned ground colour in brand/GUIDELINES.md, recorded under Brand Commitments in PRODUCT.md"
+      }
+    ]
+  }
+}

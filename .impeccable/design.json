@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T14:11:44.636Z",
+  "title": "Design System: sharper-skills",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(19.1% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(26% 0.000 89.9)",
+          "oklch(37% 0.000 89.9)",
+          "oklch(48% 0.000 89.9)",
+          "oklch(60% 0.000 89.9)",
+          "oklch(72% 0.000 89.9)",
+          "oklch(84% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(96.1% 0.008 91.5)",
+        "tonalRamp": [
+          "oklch(15% 0.001 91.5)",
+          "oklch(26% 0.004 91.5)",
+          "oklch(37% 0.007 91.5)",
+          "oklch(48% 0.008 91.5)",
+          "oklch(60% 0.008 91.5)",
+          "oklch(72% 0.008 91.5)",
+          "oklch(84% 0.004 91.5)",
+          "oklch(95% 0.001 91.5)"
+        ]
+      },
+      "signal": {
+        "role": "primary",
+        "displayName": "Signal Red-Orange",
+        "canonical": "oklch(64.5% 0.205 35.1)",
+        "tonalRamp": [
+          "oklch(15% 0.034 35.1)",
+          "oklch(26% 0.110 35.1)",
+          "oklch(37% 0.185 35.1)",
+          "oklch(48% 0.205 35.1)",
+          "oklch(60% 0.205 35.1)",
+          "oklch(72% 0.192 35.1)",
+          "oklch(84% 0.110 35.1)",
+          "oklch(95% 0.034 35.1)"
+        ]
+      },
+      "signal-hover": {
+        "role": "primary",
+        "displayName": "Signal, Lifted",
+        "canonical": "oklch(67.7% 0.183 35.9)",
+        "tonalRamp": [
+          "oklch(15% 0.031 35.9)",
+          "oklch(26% 0.098 35.9)",
+          "oklch(37% 0.165 35.9)",
+          "oklch(48% 0.183 35.9)",
+          "oklch(60% 0.183 35.9)",
+          "oklch(72% 0.171 35.9)",
+          "oklch(84% 0.098 35.9)",
+          "oklch(95% 0.031 35.9)"
+        ]
+      },
+      "signal-press": {
+        "role": "primary",
+        "displayName": "Signal, Pressed",
+        "canonical": "oklch(61.0% 0.197 35.1)",
+        "tonalRamp": [
+          "oklch(15% 0.033 35.1)",
+          "oklch(26% 0.105 35.1)",
+          "oklch(37% 0.178 35.1)",
+          "oklch(48% 0.197 35.1)",
+          "oklch(60% 0.197 35.1)",
+          "oklch(72% 0.184 35.1)",
+          "oklch(84% 0.105 35.1)",
+          "oklch(95% 0.033 35.1)"
+        ]
+      },
+      "pencil": {
+        "role": "secondary",
+        "displayName": "Red Pencil",
+        "canonical": "oklch(51.5% 0.168 36.0)",
+        "tonalRamp": [
+          "oklch(15% 0.028 36.0)",
+          "oklch(26% 0.089 36.0)",
+          "oklch(37% 0.151 36.0)",
+          "oklch(48% 0.168 36.0)",
+          "oklch(60% 0.168 36.0)",
+          "oklch(72% 0.156 36.0)",
+          "oklch(84% 0.089 36.0)",
+          "oklch(95% 0.028 36.0)"
+        ]
+      },
+      "label-graphite": {
+        "role": "neutral",
+        "displayName": "Typewriter Graphite",
+        "canonical": "oklch(36.2% 0.009 248.1)",
+        "tonalRamp": [
+          "oklch(15% 0.001 248.1)",
+          "oklch(26% 0.005 248.1)",
+          "oklch(37% 0.008 248.1)",
+          "oklch(48% 0.009 248.1)",
+          "oklch(60% 0.009 248.1)",
+          "oklch(72% 0.008 248.1)",
+          "oklch(84% 0.005 248.1)",
+          "oklch(95% 0.001 248.1)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Ruled Line",
+        "canonical": "oklch(88.4% 0.013 82.4)",
+        "tonalRamp": [
+          "oklch(15% 0.002 82.4)",
+          "oklch(26% 0.007 82.4)",
+          "oklch(37% 0.012 82.4)",
+          "oklch(48% 0.013 82.4)",
+          "oklch(60% 0.013 82.4)",
+          "oklch(72% 0.012 82.4)",
+          "oklch(84% 0.007 82.4)",
+          "oklch(95% 0.002 82.4)"
+        ]
+      },
+      "field-stroke": {
+        "role": "neutral",
+        "displayName": "Field Stroke",
+        "canonical": "oklch(82.2% 0.015 84.6)",
+        "tonalRamp": [
+          "oklch(15% 0.002 84.6)",
+          "oklch(26% 0.008 84.6)",
+          "oklch(37% 0.013 84.6)",
+          "oklch(48% 0.015 84.6)",
+          "oklch(60% 0.015 84.6)",
+          "oklch(72% 0.014 84.6)",
+          "oklch(84% 0.008 84.6)",
+          "oklch(95% 0.002 84.6)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(47.0% 0.014 259.8)",
+        "tonalRamp": [
+          "oklch(15% 0.002 259.8)",
+          "oklch(26% 0.008 259.8)",
+          "oklch(37% 0.013 259.8)",
+          "oklch(48% 0.014 259.8)",
+          "oklch(60% 0.014 259.8)",
+          "oklch(72% 0.013 259.8)",
+          "oklch(84% 0.008 259.8)",
+          "oklch(95% 0.002 259.8)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The one hero headline."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings written as short sentences."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Skill names in the numbered list."
+      },
+      "typed": {
+        "displayName": "Typed",
+        "purpose": "Typed text on an evidence slip that carries the marks."
+      },
+      "body-lead": {
+        "displayName": "Body Lead",
+        "purpose": "The hero subhead."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Explanation, intros and install steps."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Slip labels, table headers, source tags."
+      },
+      "hand": {
+        "displayName": "Hand",
+        "purpose": "Red Pencil margin notes and rejection notes only."
+      },
+      "command": {
+        "displayName": "Command",
+        "purpose": "The install command in its read-only field."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "copy-fill",
+        "value": "background-color 120ms ease-out",
+        "purpose": "Copy button fill change on hover and press."
+      },
+      {
+        "name": "pencil-in",
+        "value": "520ms cubic-bezier(0.16, 1, 0.3, 1), from opacity 0 and a small offset",
+        "purpose": "Notes and carets on the proof sheet appear one after another, 350ms to 1040ms delays. Only under prefers-reduced-motion: no-preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack-install",
+        "value": "max-width: 559px"
+      },
+      {
+        "name": "two-column",
+        "value": "720px"
+      },
+      {
+        "name": "comp",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Copy Button",
+      "kind": "button",
+      "refersTo": "copy-button",
+      "description": "The one action: copies the install command next to it, then confirms in words.",
+      "html": "<button class=\"ds-copy\" type=\"button\">Copy</button>",
+      "css": ".ds-copy { display: inline-flex; align-items: center; justify-content: center; min-width: 104px; height: 52px; padding: 0 18px; border: 0; border-radius: 8px; background: var(--signal, #F04E23); color: var(--ink, #141414); font: 500 20px/1 var(--sans, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif); cursor: pointer; transition: background-color 120ms ease-out; } .ds-copy:hover { background: #F2643E; } .ds-copy:active { background: #E0461C; transform: translateY(1px); } .ds-copy:focus-visible { outline: 2px solid var(--ink, #141414); outline-offset: 3px; }"
+    },
+    {
+      "name": "Install Command",
+      "kind": "input",
+      "refersTo": "install-field",
+      "description": "Read-only monospace command field joined to its Copy button in one 8px rounded bar.",
+      "html": "<div class=\"ds-install\"><input class=\"ds-install-field\" value=\"npx skills add rajnandan1/sharper-skills\" readonly aria-label=\"Install command\"><button class=\"ds-install-copy\" type=\"button\">Copy</button></div>",
+      "css": ".ds-install { display: flex; max-width: 640px; } .ds-install-field { flex: 1 1 auto; min-width: 0; height: 52px; padding: 0 16px; font: 500 16px/1 var(--mono, \"JetBrains Mono\", ui-monospace, monospace); color: var(--ink, #141414); background: rgba(255,255,255,0.35); border: 1px solid #C9C4BA; border-right: 0; border-radius: 8px 0 0 8px; } .ds-install-field:focus-visible { outline: 2px solid var(--ink, #141414); outline-offset: -2px; } .ds-install-copy { flex: 0 0 auto; min-width: 104px; height: 52px; padding: 0 18px; border: 0; border-radius: 0 8px 8px 0; background: var(--signal, #F04E23); color: var(--ink, #141414); font: 500 20px/1 var(--sans, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif); cursor: pointer; transition: background-color 120ms ease-out; } .ds-install-copy:hover { background: #F2643E; } .ds-install-copy:active { background: #E0461C; transform: translateY(1px); } .ds-install-copy:focus-visible { outline: 2px solid var(--ink, #141414); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Plain sans text links in a row; underline on hover only.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main\"><a href=\"#\">Skills</a><a href=\"#\">Install</a><a href=\"#\">Sources</a><a href=\"#\">GitHub</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 22px; font: 400 16px/1.5 var(--sans, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif); color: var(--ink, #141414); } .ds-nav a { color: inherit; text-decoration: none; padding: 10px 0; text-underline-offset: 0.18em; text-decoration-thickness: 1px; } .ds-nav a:hover { text-decoration: underline; } .ds-nav a:focus-visible { outline: 2px solid var(--ink, #141414); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Numbered Skill Entry",
+      "kind": "custom",
+      "refersTo": "skill-entry",
+      "description": "A style-sheet entry: mono counter, mono skill name, one Graphite sans line. No box.",
+      "html": "<ol class=\"ds-skills\"><li><code>/higher</code><span>Rewrites your task to ask for the outcome one level up.</span></li><li><code>/deeper</code><span>Rewrites your task to use what a top professional would use.</span></li></ol>",
+      "css": ".ds-skills { list-style: none; counter-reset: skill; margin: 0; padding: 0; display: grid; gap: 22px; color: var(--ink, #141414); } .ds-skills li { counter-increment: skill; display: grid; grid-template-columns: 2.6em 1fr; } .ds-skills li::before { content: counter(skill) \".\"; grid-row: 1; font: 500 17px/1.4 var(--mono, \"JetBrains Mono\", ui-monospace, monospace); } .ds-skills code { grid-column: 2; font: 600 19px/1.3 var(--mono, \"JetBrains Mono\", ui-monospace, monospace); } .ds-skills span { grid-column: 2; font: 400 16px/1.45 var(--sans, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif); color: var(--muted, #565B63); }"
+    },
+    {
+      "name": "Evidence Slip",
+      "kind": "custom",
+      "refersTo": "slip-label",
+      "description": "An open typed slip under a 1px top rule: source label, struck typed line, Red Pencil note.",
+      "html": "<div class=\"ds-slip\"><p class=\"ds-slip-label\">Rejected in release v0.5.0</p><p class=\"ds-slip-typed\"><span class=\"ds-strike\">Leave a comment at the fixed location.</span></p><p class=\"ds-slip-note\">Rejected: the commit message records the cause instead.</p></div>",
+      "css": ".ds-slip { border-top: 1px solid #DDD8CF; padding-top: 18px; font-family: var(--mono, \"JetBrains Mono\", ui-monospace, monospace); color: var(--ink, #141414); max-width: 520px; } .ds-slip-label { margin: 0 0 12px; font: 400 14px/1.4 var(--mono, \"JetBrains Mono\", ui-monospace, monospace); color: #3A3E42; } .ds-slip-typed { margin: 0; font-size: 18px; line-height: 1.5; } .ds-strike { padding: 0 0.14em; margin: 0 -0.14em; background: url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20100%2010'%20preserveAspectRatio%3D'none'%3E%3Cpath%20d%3D'M1%206.2%20C%2025%204.6%2C%2052%206.8%2C%2076%204.9%20S%2095%204.1%2C%2099%204.6'%20fill%3D'none'%20stroke%3D'%23F04E23'%20stroke-width%3D'1.8'%20stroke-linecap%3D'round'%20vector-effect%3D'non-scaling-stroke'%2F%3E%3C%2Fsvg%3E\") left 58% / 100% 0.55em no-repeat; } .ds-slip-note { margin: 14px 0 0; font: 500 23px/1.3 var(--hand, \"Caveat\", cursive); color: var(--pencil, #B3360F); max-width: 34ch; }"
+    },
+    {
+      "name": "Circled Figure",
+      "kind": "chip",
+      "description": "An uneven Signal circle round the one figure that matters, text in Red Pencil.",
+      "html": "<span class=\"ds-circle\">0 of 3</span>",
+      "css": ".ds-circle { display: inline-block; padding: 2px 10px; border: 2px solid var(--signal, #F04E23); border-radius: 50% 46% 52% 48% / 58% 50% 54% 46%; transform: rotate(-3deg); color: var(--pencil, #B3360F); font: 700 16px/1.5 var(--mono, \"JetBrains Mono\", ui-monospace, monospace); }"
+    },
+    {
+      "name": "Margin Note",
+      "kind": "custom",
+      "refersTo": "margin-note",
+      "description": "A handwritten note with a drawn Signal arrow, tilted on the proof.",
+      "html": "<p class=\"ds-note\"><svg class=\"ds-arrow\" viewBox=\"0 0 40 16\" aria-hidden=\"true\"><path d=\"M39 9 C 26 4, 14 11, 3 8 M9 3 L 2 8 L 9 13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>be specific</span></p>",
+      "css": ".ds-note { display: inline-flex; align-items: center; gap: 8px; margin: 0; font: 500 30px/0.9 var(--hand, \"Caveat\", cursive); color: var(--pencil, #B3360F); transform: rotate(-6deg); transform-origin: left center; white-space: nowrap; } .ds-arrow { width: 38px; height: auto; color: var(--signal, #F04E23); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Editor's Proof",
+    "overview": "Every surface is a proof sheet that an editor has worked over. The request arrives typed, in a monospace face on warm paper, and an editor's red pencil marks it until it says what was meant: a word struck through, a word underlined, a caret where something goes in, a figure circled, a short note in the margin with a drawn arrow. The explanation around the proof is set in the platform's plain sans, so the reader can tell at a glance what was typed and what is being said about it.\n\nDensity is low and reading-led. Content sits in vertical order on one paper ground, with no enclosed boxes. Groups are separated by a single ruled line, lists are numbered entries in a style sheet, and evidence is shown as typed slips with the editor's marks on them. Colour is almost absent: ink on paper, with one red-orange used only by the pencil and by the one action the page exists for, the copy button.\n\nThe world rejects the category default for developer tools: a centred headline over a grid of identical feature cards with an icon in each. It is flat paper, not a glossy product UI.",
+    "keyCharacteristics": [
+      "Warm paper ground with a fine paper texture, and near-black ink type.",
+      "Monospace for everything typed (headings, commands, skill names, labels); plain sans for explanation.",
+      "One accent, Signal, kept for pencil marks and the copy action.",
+      "Handwritten margin notes in a deeper Red Pencil, set in Caveat and tilted a few degrees.",
+      "No cards, no shadows, no icons. Structure comes from ruled lines and numbering. The one exception is the copy glyph on the hero Copy button: an authored two-page SVG drawn in the button's ink, kept because the approved comp shows it."
+    ],
+    "rules": [
+      {
+        "name": "The Pencil Only Rule",
+        "body": "Signal is never body text, never a background panel and never decoration. It appears as a pencil mark or as the Copy button, nowhere else. As text on Paper it is allowed only at 48 px and up (brand rule, 3.2 to 1).",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Inks Rule",
+        "body": "On a marked-up item, the stroke is Signal and the handwriting is Red Pencil. Do not swap them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Typed Versus Said Rule",
+        "body": "If a reader could paste it, type it or run it, it is monospace. If it explains, it is sans. Commands and skill names inside sans sentences are inline `code` in the monospace at 1.02em.",
+        "section": "typography"
+      },
+      {
+        "name": "The Pencil Hand Rule",
+        "body": "Caveat appears only as a note written on a typed item. It never sets a heading, a button or body text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "If an element needs to stand out, give it a ruled line, a number or a pencil mark, never a shadow or a raised surface.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** set every typed or runnable thing in JetBrains Mono and every explanation in the platform sans.",
+      "**Do** keep Signal to pencil marks (strike, underline, caret, circle, arrow) and the Copy button.",
+      "**Do** write handwritten notes in Red Pencil Caveat, tilted 4 to 10 degrees, next to the item they mark.",
+      "**Do** separate groups with a 1 px rule and order lists with numbers.",
+      "**Do** keep the paper texture on the page ground.",
+      "**Do** pair every install command with a Copy button that confirms in words.",
+      "**Do** gate every animation behind `prefers-reduced-motion: no-preference`."
+    ],
+    "donts": [
+      "**Don't** build a grid of feature cards, or enclose content groups (skills, slips, sources) in boxes with borders, fills or shadows. The install bar is the one stroked and washed element, because it is a field.",
+      "**Don't** add icon glyphs beyond the hero copy glyph. An arrow on the proof is a pencil stroke inside a margin note, not an icon.",
+      "**Don't** use Signal as running text on Paper below 48 px, or as a background panel.",
+      "**Don't** add shadows, gradients or glows to any element or to the logo.",
+      "**Don't** rotate, recolour, stretch or re-set the logo in a live font; use the files in `brand/`.",
+      "**Don't** use Caveat for headings, buttons or body text."
+    ]
+  }
+}
