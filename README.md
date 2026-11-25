@@ -3,7 +3,7 @@
   <img alt="sharper-skills" src="brand/sharper-skills-horizontal.svg" width="480">
 </picture>
 
-Seven skills for coding agents. Six make the agent more precise before it acts. One checks that you understand what it did. Each skill is a folder with a `SKILL.md` file. Any agent that reads that format can use it: Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot, and others. None of them does the task. Each one shapes the prompt, the plan, the investigation, the next session, or your understanding of the change.
+Eight skills for coding agents. Six make the agent more precise before it acts. One does open-ended creative work. One checks that you understand what it did. Each skill is a folder with a `SKILL.md` file. Any agent that reads that format can use it: Claude Code, Codex, Cursor, OpenCode, Gemini CLI, GitHub Copilot, and others. `/leonardo` does the task itself. The other seven shape the prompt, the plan, the investigation, the next session, or your understanding of the change.
 
 ## The skills
 
@@ -18,6 +18,12 @@ The other three skills work from evidence. They come from copyconstruct's post "
 - `signal-first-plan` runs before you build a feature. It lists every exit the feature's data leaves through. It puts a countable signal on each exit. It checks the signals against main, the branch before your change. The agent invokes it on its own when you ask for behaviour that ships to users or other systems.
 - `debugging-by-constraints` runs on production bugs and review findings. It gathers facts first. It picks a control, a case that is equal to the broken one except for the suspected difference. It builds a matrix of hypotheses against facts. It keeps the one hypothesis that fits every fact. The agent invokes it on its own. You can also run `/debugging-by-constraints`.
 - `/debug-retro` runs after a debug session. It counts each time you had to step in. It turns each one into a lasting rule. It has had the least use so far.
+
+The next skill does the work itself. It comes from creativity research, listed under Sources.
+
+- `/leonardo <task>` does an open-ended task, such as a name, a concept, copy or a design. It aims to beat the default: the answer the agent gives to the bare task with no method. The agent writes a short brief and the criteria that make one candidate better than another. Then it starts subagents, which are separate agent runs that see only what they are given. One subagent writes the default. Five each write 4 candidates with one move. A move is a thinking method, such as invert the problem or drop an assumption. Two judge subagents score all 21 answers without knowing which one is the default. The 3 top-scoring candidates that are different ideas each get one redraft, and two new judges score them again. You get the winner, the 2 runners-up, the default and the scores. That makes 13 subagents, plus a third judge in a round where two judges disagree by 2 points or more. In 4 test runs in Claude Code on 2026-11-25, on a tool name, a farewell poem and an app feature, a run took 10 to 15 minutes and cost $7.70 to $11.20 by Claude Code's own cost report. A plain answer to the same task took about 20 seconds and $0.40.
+
+The method follows three findings: more attempts give more good results (Jung et al.), people who work alone and pool their ideas beat brainstorming groups (Diehl and Stroebe), and a varied set of good drafts finds the best one better than aiming straight at it (Stanley and Lehman). The loop of draft, judge and redraft is what Ken Kocienda calls creative selection at Apple: demo, feedback, next demo. The moves come from Claude Shannon's 1952 talk "Creative Thinking".
 
 The last skill checks you, not the agent. It comes from Addy Osmani's post "Critical thinking when agents do the work".
 
@@ -35,7 +41,7 @@ The `skills` CLI from Vercel Labs installs skills from a GitHub repo into the fo
 npx skills add rajnandan1/sharper-skills
 ```
 
-The CLI lists the seven skills and the agents it finds on your machine. You pick the skills and the agents you want. The CLI installs the skills into the current project. Add `-g` to install them for every project.
+The CLI lists the eight skills and the agents it finds on your machine. You pick the skills and the agents you want. The CLI installs the skills into the current project. Add `-g` to install them for every project.
 
 To skip the prompts, name the skills and the agents:
 
@@ -47,7 +53,7 @@ npx skills add rajnandan1/sharper-skills --skill debugging-by-constraints --skil
 
 `npx skills update` pulls new versions later. `npx skills remove deeper` removes one skill.
 
-### Claude Code, all seven as a plugin
+### Claude Code, all eight as a plugin
 
 1. Run `/plugin marketplace add rajnandan1/sharper-skills`.
 2. Run `/plugin install sharper-skills@sharper-skills`.
@@ -56,7 +62,7 @@ When you install the plugin, each skill also answers to its prefixed name, such 
 
 ### By hand
 
-Copy the whole folder of each skill you want from `skills/` into the folder your agent reads. The folders of `deeper`, `higher`, `wider`, `defend` and `debug-retro` hold an `agents/` folder for Codex; copy it too (see Start a skill).
+Copy the whole folder of each skill you want from `skills/` into the folder your agent reads. The folders of `deeper`, `higher`, `wider`, `leonardo`, `defend` and `debug-retro` hold an `agents/` folder for Codex; copy it too (see Start a skill).
 
 - Claude Code reads `~/.claude/skills/`.
 - Codex reads `~/.agents/skills/`.
@@ -64,9 +70,9 @@ Copy the whole folder of each skill you want from `skills/` into the folder your
 
 ## Start a skill
 
-To start a skill yourself, type its name and then the task, such as `/deeper add retry logic`. Codex uses `$deeper` instead of `/deeper`. If you type only the name, the three lenses (`deeper`, `higher`, `wider`) work on your last message in the conversation, and `defend` works on everything the conversation produced.
+To start a skill yourself, type its name and then the task, such as `/deeper add retry logic`. Codex uses `$deeper` instead of `/deeper`. If you type only the name, the three lenses (`deeper`, `higher`, `wider`) and `leonardo` work on your last message in the conversation, and `defend` works on everything the conversation produced.
 
-`signal-first-plan` and `debugging-by-constraints` also start on their own when your task matches their description. The other five, `deeper`, `higher`, `wider`, `defend` and `debug-retro`, are meant to start only when you type their name. Claude Code and Cursor wait for you because of the `disable-model-invocation: true` line at the top of each of those five `SKILL.md` files. Codex waits because of the `agents/openai.yaml` file in each of those five skill folders. The OpenCode, Hermes and Gemini CLI agents have no such setting, so their model can start one of the five unasked. `defend` writes an HTML report and a rubric file, and `debug-retro` writes rules to a file under `~/.sharper-skills/`, so an unasked start can leave files you did not ask for. You can still install the five in those agents. To rule out unasked starts there, install only the other two: `npx skills add rajnandan1/sharper-skills --skill signal-first-plan --skill debugging-by-constraints`.
+`signal-first-plan` and `debugging-by-constraints` also start on their own when your task matches their description. The other six, `deeper`, `higher`, `wider`, `leonardo`, `defend` and `debug-retro`, are meant to start only when you type their name. Claude Code and Cursor wait for you because of the `disable-model-invocation: true` line at the top of each of those six `SKILL.md` files. Codex waits because of the `agents/openai.yaml` file in each of those six skill folders. The OpenCode, Hermes and Gemini CLI agents have no such setting, so their model can start one of the six unasked. `defend` writes an HTML report and a rubric file, and `debug-retro` writes rules to a file under `~/.sharper-skills/`, so an unasked start can leave files you did not ask for. `leonardo` starts many subagents, so an unasked start can spend far more tokens than you planned. You can still install the six in those agents. To rule out unasked starts there, install only the other two: `npx skills add rajnandan1/sharper-skills --skill signal-first-plan --skill debugging-by-constraints`.
 
 ## Where learned rules go
 
@@ -89,6 +95,11 @@ mkdir -p "$store" && mv -n .claude/debug-layers.md "$store/debug-layers.md"
 - Felix Rieseberg, "How to be more ambitious: A tutorial for humans with models": https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/
 - copyconstruct, "How to effectively debug when you no longer understand the code": https://copyconstruct.medium.com/how-to-effectively-debug-when-you-no-longer-understand-the-code-bd3dcb2c5f7b
 - Addy Osmani, "Critical thinking when agents do the work": https://x.com/addyosmani/status/2117512471930167377
+- Ken Kocienda, *Creative Selection* (2018): https://panmacmillan.com/authors/ken-kocienda/creative-selection/9781529004731
+- Kenneth Stanley and Joel Lehman, *Why Greatness Cannot Be Planned* (2015): https://www.springer.com/gp/book/9783319155234
+- Claude Shannon, "Creative Thinking" (1952): https://jamesclear.com/great-speeches/creative-thinking-by-claude-shannon
+- Jung et al., "Quantity yields quality when it comes to creativity" (2015): https://pmc.ncbi.nlm.nih.gov/articles/PMC4479710
+- Diehl and Stroebe, "Productivity Loss in Brainstorming Groups: Toward the Solution of a Riddle" (1987): https://homepages.se.edu/cvonbergen/files/2013/01/Productivity-Loss-In-Brainstorming_Toward-the-Solution-of-a-Riddle.pdf
 
 
 ## License
