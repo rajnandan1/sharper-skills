@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sharper-skills: skills that sharpen what your coding agent does</title>
+<meta name="description" content="Eight open-source skills for Claude Code, Codex, Cursor and any agent that reads SKILL.md. Lines go in when a real session or a test run backs them.">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#F4F2EC">
+<link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="copy.js" defer></script>
+<script async src="https://saki-production.up.railway.app/g-t-m/script.js?id=G-XY8P7ZVPV5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-XY8P7ZVPV5", { transport_url: "https://saki-production.up.railway.app/g-a" });
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="stage" id="top">
+  <a class="logo" href="#top"><img src="assets/plates/logo.png" alt="sharper-skills" width="1200" height="182" fetchpriority="high"></a>
+  <nav class="nav" aria-label="Main">
+    <a href="#skills">Skills</a>
+    <a href="#install">Install</a>
+    <a href="#sources">Sources</a>
+    <a href="https://github.com/rajnandan1/sharper-skills">GitHub</a>
+  </nav>
+  <div class="hero-copy">
+    <h1 class="headline">Skills that sharpen<br> what your coding agent does.</h1>
+    <p class="subhead">Eight open-source skills for Claude Code, Codex and Cursor.<br> Lines go in when a real session or a test run backs them.</p>
+    <div class="install">
+      <label class="visually-hidden" for="cmd-main">Install command</label>
+      <input class="install-field" id="cmd-main" value="npx skills add rajnandan1/sharper-skills" readonly spellcheck="false">
+      <button class="copy-button" type="button" data-copy="cmd-main"><span class="copy-label">Copy</span><svg class="copy-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.5 2.75h7.25l4.5 4.5v9.5a1.25 1.25 0 0 1-1.25 1.25H8.5a1.25 1.25 0 0 1-1.25-1.25V4a1.25 1.25 0 0 1 1.25-1.25Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M15.5 2.9v4.6h4.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><rect class="copy-front" x="3.25" y="6.75" width="11.5" height="14.5" rx="1.25" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      <p class="copy-status" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+  <figure class="sheet" aria-labelledby="sheet-caption">
+    <img class="sheet-paper" src="assets/plates/sheet-paper.webp" alt="" width="1536" height="1024">
+    <img class="pencil" src="assets/plates/pencil.webp" alt="" width="466" height="1536">
+    <p class="sheet-label sheet-label-original">Example task:</p>
+    <p class="sheet-task"><span class="mark-strike">add retry logic</span></p>
+    <p class="note note-specific"><svg class="arrow" viewBox="0 0 40 16" aria-hidden="true" focusable="false"><path d="M39 9 C 26 4, 14 11, 3 8 M9 3 L 2 8 L 9 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>be specific</span></p>
+    <p class="sheet-label sheet-label-sharper">Sharper prompt:</p>
+    <div class="sheet-rewrite">
+      <p>Add retry logic to the payment webhook client.<br> Start from the raw failure logs for the last 7 days,<br> not the dashboard.</p>
+      <p>Retry only on 429 and 5xx, with exponential <span class="mark-under">backoff</span><span class="caret" aria-hidden="true">^</span><br> at most 5 tries.<span class="caret" aria-hidden="true">^</span></p>
+      <p>Prove it with a test that replays the <span class="mark-under">logged</span><br> failures.</p>
+    </div>
+    <p class="note note-dashboard"><svg class="arrow" viewBox="0 0 40 16" aria-hidden="true" focusable="false"><path d="M39 9 C 26 4, 14 11, 3 8 M9 3 L 2 8 L 9 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>use the logs</span></p>
+    <p class="note note-jitter"><span>and jitter</span></p>
+    <p class="note note-limit"><span>limit</span><svg class="arrow arrow-r" viewBox="0 0 40 16" aria-hidden="true" focusable="false"><path d="M39 9 C 26 4, 14 11, 3 8 M9 3 L 2 8 L 9 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+    <p class="note note-logs"><svg class="arrow" viewBox="0 0 40 16" aria-hidden="true" focusable="false"><path d="M39 9 C 26 4, 14 11, 3 8 M9 3 L 2 8 L 9 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>from logs</span></p>
+    <figcaption class="sheet-caption" id="sheet-caption">An example written for this page, not real <code>/deeper</code> output.</figcaption>
+  </figure>
+</header>
+
+<main id="main">
+  <section class="skills" id="skills" aria-labelledby="skills-title">
+    <h2 class="skills-heading" id="skills-title">The eight skills.</h2>
+    <p class="skills-intro">Seven shape the work around a task. <code>/leonardo</code> does the task itself.</p>
+    <ol class="skill-list">
+      <li class="skill"><code>/higher</code><span>Rewrites your task to ask for the outcome one level up.</span></li>
+      <li class="skill"><code>/deeper</code><span>Rewrites your task to use what a top professional would use.</span></li>
+      <li class="skill"><code>/wider</code><span>Brings in the methods of other fields, plus a red team.</span></li>
+      <li class="skill"><code>/signal-first-plan</code><span>Puts a countable signal on every exit before you build.</span></li>
+      <li class="skill"><code>/debugging-by-constraints</code><span>Gathers facts first, then keeps the one cause that fits all.</span></li>
+      <li class="skill"><code>/debug-retro</code><span>Turns each time you had to step in into a lasting rule.</span></li>
+      <li class="skill"><code>/leonardo</code><span>Does open-ended work and tries to beat the answer your agent gives by default.</span></li>
+      <li class="skill"><code>/defend</code><span>Quizzes you on what a session decided, and grades your answers.</span></li>
+    </ol>
+    <p class="skills-more"><code>/higher</code>, <code>/deeper</code> and <code>/wider</code> hand you a rewritten prompt in the chat, like the example above, and you reply <code>go</code> in the same chat to run it. The full description of each skill is in the <a href="https://github.com/rajnandan1/sharper-skills#the-skills">README</a>.</p>
+  </section>
+
+  <section class="evidence" id="evidence" aria-labelledby="evidence-title">
+    <div class="evidence-intro">
+      <h2 id="evidence-title">How a line gets in.</h2>
+      <p>A skill is a file of written instructions for the agent. The rule for a new line: a real session transcript or a test run must show the result that line would change. A claim that fails is kept in the GitHub release notes, with the reason it failed. When a line goes in before it is tested, the release notes say so.</p>
+    </div>
+    <div class="slip slip-rejected">
+      <p class="slip-label">Rejected in release v0.5.0: a claim from Andreas Zeller's <cite>The Debugging Book</cite>, checked against <code>/debugging-by-constraints</code></p>
+      <p class="slip-typed"><span class="mark-strike">Leave a comment at the fixed location that explains why the code now looks this way.</span></p>
+      <p class="slip-note">Rejected: sharper-skills allows code comments only for constraints from outside the code, so the commit message records the cause of the bug instead.</p>
+    </div>
+    <div class="slip slip-results">
+      <p class="slip-label">Published in release v0.12.0: <code>/leonardo</code> against the plain agent (the same agent with no skill). Three models judged each pair blind and picked one answer to ship.</p>
+      <table>
+        <caption class="visually-hidden">Blind test results for /leonardo, v0.12.0</caption>
+        <thead><tr><th scope="col">Task</th><th scope="col">Judges who picked the skill</th></tr></thead>
+        <tbody>
+          <tr><td>A farewell poem</td><td>3 of 3</td></tr>
+          <tr><td>A budgeting feature</td><td>3 of 3</td></tr>
+          <tr><td>A tool name, after a fix to the skill</td><td><span class="mark-circle">0 of 3</span></td></tr>
+        </tbody>
+      </table>
+      <p class="slip-source"><a href="https://github.com/rajnandan1/sharper-skills/releases/tag/v0.12.0">Read the v0.12.0 release notes</a></p>
+    </div>
+  </section>
+
+  <div class="lower">
+  <section class="install-section" id="install" aria-labelledby="install-title">
+    <h2 id="install-title">Install.</h2>
+    <ol class="install-steps">
+      <li>
+        <p>Any agent, with the Vercel Labs <code>skills</code> CLI (Node.js 22.20 or later). Add <code>-g</code> to install for every project.</p>
+        <div class="install install-inline">
+          <code class="install-field install-code" id="cmd-cli">npx skills add rajnandan1/sharper-skills</code>
+          <button class="copy-button" type="button" data-copy="cmd-cli" aria-describedby="cmd-cli"><span class="copy-label">Copy</span></button>
+        </div>
+      </li>
+      <li>
+        <p>Claude Code, all eight as a plugin. Run the first command, then the second.</p>
+        <div class="install install-inline">
+          <code class="install-field install-code" id="cmd-mkt">/plugin marketplace add rajnandan1/sharper-skills</code>
+          <button class="copy-button" type="button" data-copy="cmd-mkt" aria-describedby="cmd-mkt"><span class="copy-label">Copy</span></button>
+        </div>
+        <div class="install install-inline">
+          <code class="install-field install-code" id="cmd-plg">/plugin install sharper-skills@sharper-skills</code>
+          <button class="copy-button" type="button" data-copy="cmd-plg" aria-describedby="cmd-plg"><span class="copy-label">Copy</span></button>
+        </div>
+      </li>
+      <li>
+        <p>By hand: copy a skill's folder from <a href="https://github.com/rajnandan1/sharper-skills/tree/main/skills"><code>skills/</code></a> into <code>~/.claude/skills/</code> (Claude Code), <code>~/.agents/skills/</code> (Codex) or <code>~/.cursor/skills/</code> (Cursor).</p>
+      </li>
+    </ol>
+    <p class="start">To start a skill, type its name and the task: <code>/deeper add retry logic</code>. Codex uses <code>$deeper</code>. <code>/signal-first-plan</code> and <code>/debugging-by-constraints</code> also start on their own when your task matches them.</p>
+  </section>
+
+  <section class="sources" id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">Sources.</h2>
+    <p class="sources-intro">Each source, and the skills it informed.</p>
+    <ul class="source-list">
+      <li><a href="https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/">Felix Rieseberg, "How to be more ambitious: A tutorial for humans with models"</a> <span>/higher, /deeper, /wider</span></li>
+      <li><a href="https://copyconstruct.medium.com/how-to-effectively-debug-when-you-no-longer-understand-the-code-bd3dcb2c5f7b">copyconstruct, "How to effectively debug when you no longer understand the code"</a> <span>/signal-first-plan, /debugging-by-constraints, /debug-retro</span></li>
+      <li><a href="https://x.com/addyosmani/status/2117512471930167377">Addy Osmani, "Critical thinking when agents do the work"</a> <span>/defend</span></li>
+      <li><a href="https://panmacmillan.com/authors/ken-kocienda/creative-selection/9781529004731">Ken Kocienda, <cite>Creative Selection</cite> (2018)</a> <span>/leonardo</span></li>
+      <li><a href="https://www.springer.com/gp/book/9783319155234">Kenneth Stanley and Joel Lehman, <cite>Why Greatness Cannot Be Planned</cite> (2015)</a> <span>/leonardo</span></li>
+      <li><a href="https://jamesclear.com/great-speeches/creative-thinking-by-claude-shannon">Claude Shannon, "Creative Thinking" (1952)</a> <span>/leonardo</span></li>
+      <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4479710">Jung et al., "Quantity yields quality when it comes to creativity" (2015)</a> <span>/leonardo</span></li>
+      <li><a href="https://homepages.se.edu/cvonbergen/files/2013/01/Productivity-Loss-In-Brainstorming_Toward-the-Solution-of-a-Riddle.pdf">Diehl and Stroebe, "Productivity Loss in Brainstorming Groups" (1987)</a> <span>/leonardo</span></li>
+    </ul>
+  </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>MIT license. Version 0.12.0. <a href="https://github.com/rajnandan1/sharper-skills">github.com/rajnandan1/sharper-skills</a></p>
+</footer>
+</body>
+</html>
