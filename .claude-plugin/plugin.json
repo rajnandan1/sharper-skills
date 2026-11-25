@@ -1,7 +1,7 @@
 {
   "name": "sharper-skills",
-  "version": "0.11.0",
-  "description": "Seven skills: three prompt lenses (higher, deeper, wider), an evidence loop for building and debugging (signal-first-plan, debugging-by-constraints, debug-retro), and a report with questions, graded by the agent, that checks you understand what a session decided or changed (defend).",
+  "version": "0.12.0",
+  "description": "Eight skills: three prompt lenses (higher, deeper, wider), an evidence loop for building and debugging (signal-first-plan, debugging-by-constraints, debug-retro), a creative-selection loop that does open-ended work and picks blind against the plain answer (leonardo), and a report with questions, graded by the agent, that checks you understand what a session decided or changed (defend).",
   "author": {
     "name": "Raj Nandan Sharma",
     "url": "https://github.com/rajnandan1"
